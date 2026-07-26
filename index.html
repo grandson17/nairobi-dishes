@@ -425,6 +425,11 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     <div class="ds-main-section active" id="dssec-today">
       <div class="ds-section-title">Today's Menu</div>
       <div class="ds-section-sub" id="ds-date-sub">Mon, 23 June · Nairobi CBD</div>
+      <div class="wallet-chip-block" style="display:none;margin:0 0 16px;padding:13px 15px;background:var(--dark);border-radius:14px;align-items:center;gap:11px;max-width:420px;">
+        <span class="ms msfill" style="font-size:22px;color:var(--yellow);">account_balance_wallet</span>
+        <div style="flex:1;"><div style="font-size:10.5px;color:#9A9A9A;">Wallet balance</div><div class="acct-wallet-balance" style="font:700 16px Poppins,sans-serif;color:#fff;">KES 0</div></div>
+        <button onclick="openTopUp()" style="border:none;border-radius:9px;background:var(--yellow);color:var(--dark);font:700 11.5px Poppins,sans-serif;padding:8px 13px;cursor:pointer;">Top up</button>
+      </div>
       <div class="ds-banner" id="ds-banner">
         <span class="ms msfill" style="font-size:22px;color:#9A6E12;">schedule</span>
         <div>
@@ -492,6 +497,10 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
           <div class="field-err" id="ds-weekly-loc-err">Please enter your delivery location.</div>
         </div>
         <button onclick="dsSendWeeklyOrder()" class="wa-order-btn" style="margin:0;"><span style="font-size:18px;">📲</span>Send Weekly Order via WhatsApp</button>
+      </div>
+      <div id="ds-weekly-account-save-bar" style="display:none;background:var(--dark);border-radius:18px;padding:18px 20px;margin-bottom:16px;">
+        <div style="font:700 13px Poppins,sans-serif;color:#fff;margin-bottom:12px;">You've changed a meal in your saved weekly order</div>
+        <button onclick="acctSaveWeeklyUpdate()" class="wa-order-btn" style="margin:0;"><span style="font-size:18px;">📲</span>Save &amp; Send Update to WhatsApp</button>
       </div>
     </div>
 
@@ -573,10 +582,29 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
 
         </div>
         <div class="acct-signedin-block" style="display:none;">
-          <div class="acct-avatar-circle acct-profile-initials">—</div>
-          <div class="acct-profile-name">—</div>
-          <div class="acct-profile-phone">—</div>
-          <button class="acct-signout-btn" onclick="acctSignOut()">Sign out</button>
+          <div style="display:flex;align-items:center;gap:13px;">
+            <div style="position:relative;flex:0 0 auto;">
+              <div class="acct-avatar-circle acct-profile-initials" style="width:58px;height:58px;font-size:20px;">—</div>
+              <div onclick="openEditProfile()" style="position:absolute;bottom:0;right:0;width:22px;height:22px;border-radius:50%;background:var(--green);border:2px solid #fff;display:flex;align-items:center;justify-content:center;cursor:pointer;"><span class="ms msfill" style="font-size:12px;color:#fff;">edit</span></div>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <div class="acct-profile-name" style="text-align:left;margin-top:0;font-size:17px;">—</div>
+              <div class="acct-profile-phone" style="text-align:left;margin-top:1px;">—</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;background:var(--dark);border-radius:16px;padding:14px 15px;display:flex;align-items:center;gap:11px;">
+            <span class="ms msfill" style="font-size:24px;color:var(--yellow);">account_balance_wallet</span>
+            <div style="flex:1;"><div style="font-size:10.5px;color:#9A9A9A;">Wallet balance</div><div class="acct-wallet-balance" style="font:700 18px Poppins,sans-serif;color:#fff;">KES 0</div></div>
+            <button onclick="openTopUp()" style="border:none;border-radius:9px;background:var(--yellow);color:var(--dark);font:700 11.5px Poppins,sans-serif;padding:9px 13px;cursor:pointer;">Top up</button>
+          </div>
+          <div style="background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-top:14px;">
+            <div class="ds-pop-row" style="cursor:pointer;" onclick="openOrderHistory()"><span class="ms" style="font-size:20px;color:var(--green);">receipt_long</span><div style="flex:1;font:600 13px Poppins,sans-serif;">Order History</div><span class="ms" style="color:#ccc;">chevron_right</span></div>
+            <div class="ds-pop-row" style="cursor:pointer;" onclick="openWalletTx()"><span class="ms" style="font-size:20px;color:var(--green);">account_balance_wallet</span><div style="flex:1;font:600 13px Poppins,sans-serif;">Wallet &amp; Transactions</div><span class="ms" style="color:#ccc;">chevron_right</span></div>
+            <div class="ds-pop-row" style="cursor:pointer;" onclick="openEditProfile()"><span class="ms" style="font-size:20px;color:var(--green);">location_on</span><div style="flex:1;"><div style="font:600 13px Poppins,sans-serif;">Delivery location</div><div class="acct-profile-location" style="font-size:11px;color:var(--muted);">—</div></div><span class="ms" style="color:#ccc;">chevron_right</span></div>
+          </div>
+          <div style="background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-top:10px;">
+            <div class="ds-pop-row" style="cursor:pointer;" onclick="acctSignOut()"><span class="ms" style="font-size:20px;color:var(--red);">logout</span><div style="flex:1;font:600 13px Poppins,sans-serif;color:var(--red);">Log out</div></div>
+          </div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
@@ -626,9 +654,10 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
           <input type="text" id="ds-delivery-loc" class="field-input" placeholder="e.g. Anniversary Towers, Moi Ave">
           <div class="field-err" id="ds-loc-err">Please enter your delivery location.</div>
         </div>
-        <button onclick="dsHandleOrder()" class="wa-order-btn" style="margin:0 0 6px;">
+        <button onclick="dsHandleOrderSmart()" class="wa-order-btn" id="ds-order-btn" style="margin:0 0 6px;">
           <span style="font-size:18px;">📲</span>Order via WhatsApp
         </button>
+        <div class="field-err" id="ds-wallet-insufficient-err" style="display:none;">Insufficient wallet balance — top up to continue.</div>
         <button onclick="dsClearCart()" class="clear-link">Clear order</button>
       </div>
     </div>
@@ -662,6 +691,11 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       <div><div class="greeting-name" id="greeting-name">Habari!</div><div class="greeting-sub" id="greeting-sub">Nairobi CBD</div></div>
       <div class="avatar-circle">ND</div>
     </div>
+    <div class="wallet-chip-block" style="display:none;margin:10px 16px 0;padding:11px 13px;background:var(--dark);border-radius:14px;align-items:center;gap:10px;">
+      <span class="ms msfill" style="font-size:20px;color:var(--yellow);">account_balance_wallet</span>
+      <div style="flex:1;"><div style="font-size:10.5px;color:#9A9A9A;">Wallet balance</div><div class="acct-wallet-balance" style="font:700 15px Poppins,sans-serif;color:#fff;">KES 0</div></div>
+      <button onclick="openTopUp('acct')" style="border:none;border-radius:9px;background:var(--yellow);color:var(--dark);font:700 11px Poppins,sans-serif;padding:7px 12px;cursor:pointer;">Top up</button>
+    </div>
     <div class="seg-wrap">
       <button class="seg-btn active" id="seg-daily" onclick="setView('daily')">Daily order</button>
       <button class="seg-btn" id="seg-weekly" onclick="setView('weekly')">Weekly plan</button>
@@ -692,6 +726,26 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
           <a href="https://wa.me/254714243150" class="wa-btn-green"><span class="ms msfill" style="font-size:18px;">chat</span>Chat on WhatsApp</a>
         </div>
       </div>
+      <div id="wallet-success-card" style="display:none;padding:14px 16px 6px;">
+        <div style="border-radius:18px;overflow:hidden;border:1px solid #D7EFE9;">
+          <div style="background:var(--green-tint);padding:22px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <div style="width:64px;height:64px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;"><span class="ms msfill" style="font-size:38px;color:#fff;">check</span></div>
+            <div style="font:700 18px Poppins,sans-serif;color:var(--green-dark);margin-top:14px;">Order confirmed!</div>
+            <div style="font-size:12.5px;color:#3E8A6C;margin-top:5px;line-height:1.5;">Paid KES <span id="wallet-success-total">0</span> from wallet. Your lunch is being packed and arrives from <strong>12:30 PM</strong>.</div>
+          </div>
+          <div style="padding:14px 16px;background:#fff;">
+            <div id="wallet-success-items"></div>
+            <div style="height:1px;background:var(--border);margin:8px 0;"></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);padding:2px 0;"><span>Order ref</span><span id="wallet-success-ref">—</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);padding:2px 0;"><span>Deliver to</span><span id="wallet-success-location">—</span></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:10px;">
+          <button onclick="walletOrderTrackWA()" style="flex:1;border:1.5px solid var(--border);background:#fff;border-radius:12px;color:var(--dark);font:700 12px Poppins,sans-serif;padding:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;"><span class="ms" style="font-size:17px;color:#25D366;">chat</span>Track on WhatsApp</button>
+          <button onclick="walletOrderReceipt()" style="flex:0 0 auto;border:1.5px solid var(--border);background:#fff;border-radius:12px;color:var(--dark);font:700 12px Poppins,sans-serif;padding:12px 14px;cursor:pointer;">Receipt</button>
+        </div>
+        <div style="text-align:center;margin-top:14px;"><span style="font:700 12px Poppins,sans-serif;color:var(--muted);cursor:pointer;" onclick="dismissWalletOrderSuccess()">Back to menu</span></div>
+      </div>
       <div id="menu-block">
         <div class="sec-head"><span class="sec-title">Today's menu</span><span class="sec-sub">from KES 100</span></div>
         <div id="featured-card-wrap"></div>
@@ -719,6 +773,10 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
         </div>
         <button onclick="openWeeklyCheckout()" style="width:100%;border:none;border-radius:11px;background:var(--green);color:#fff;font:700 13px Poppins,sans-serif;padding:12px;cursor:pointer;"><span style="font-size:15px;">📲</span> Send Weekly Order via WhatsApp</button>
       </div>
+      <div id="weekly-account-save-bar" style="display:none;margin:10px 16px 4px;background:var(--dark);border-radius:14px;padding:14px 16px;">
+        <div style="font:700 12px Poppins,sans-serif;color:#fff;margin-bottom:10px;">You've changed a meal</div>
+        <button onclick="acctSaveWeeklyUpdate()" style="width:100%;border:none;border-radius:11px;background:var(--green);color:#fff;font:700 13px Poppins,sans-serif;padding:12px;cursor:pointer;"><span style="font-size:15px;">📲</span> Save &amp; Send Update to WhatsApp</button>
+      </div>
     </div>
   </div>
 
@@ -728,7 +786,7 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
         <div class="order-bar-count" id="bar-count"></div>
         <div class="order-bar-total" id="bar-total"></div>
       </div>
-      <button class="order-bar-btn" onclick="openCheckout()">
+      <button class="order-bar-btn" id="order-bar-checkout-btn" onclick="openCheckoutSmart()">
         <span class="ms msfill" style="font-size:16px;">payments</span>Order via WhatsApp
       </button>
     </div>
@@ -842,10 +900,29 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
 
       </div>
       <div class="acct-signedin-block" style="display:none;">
-        <div class="acct-avatar-circle acct-profile-initials">—</div>
-        <div class="acct-profile-name">—</div>
-        <div class="acct-profile-phone">—</div>
-        <button class="acct-signout-btn" onclick="acctSignOut()">Sign out</button>
+        <div style="display:flex;align-items:center;gap:13px;">
+          <div style="position:relative;flex:0 0 auto;">
+            <div class="acct-avatar-circle acct-profile-initials" style="width:58px;height:58px;font-size:20px;">—</div>
+            <div onclick="openEditProfile('acct')" style="position:absolute;bottom:0;right:0;width:22px;height:22px;border-radius:50%;background:var(--green);border:2px solid #fff;display:flex;align-items:center;justify-content:center;cursor:pointer;"><span class="ms msfill" style="font-size:12px;color:#fff;">edit</span></div>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <div class="acct-profile-name" style="text-align:left;margin-top:0;font-size:17px;">—</div>
+            <div class="acct-profile-phone" style="text-align:left;margin-top:1px;">—</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;background:var(--dark);border-radius:16px;padding:14px 15px;display:flex;align-items:center;gap:11px;">
+          <span class="ms msfill" style="font-size:24px;color:var(--yellow);">account_balance_wallet</span>
+          <div style="flex:1;"><div style="font-size:10.5px;color:#9A9A9A;">Wallet balance</div><div class="acct-wallet-balance" style="font:700 18px Poppins,sans-serif;color:#fff;">KES 0</div></div>
+          <button onclick="openTopUp('acct')" style="border:none;border-radius:9px;background:var(--yellow);color:var(--dark);font:700 11.5px Poppins,sans-serif;padding:9px 13px;cursor:pointer;">Top up</button>
+        </div>
+        <div class="list-group" style="margin:14px 0 0;">
+          <div class="list-row" onclick="openOrderHistory('acct')"><span class="ms" style="font-size:19px;color:var(--green);">receipt_long</span><div style="flex:1;"><div style="font:600 12.5px Poppins,sans-serif;">Order History</div></div><span class="ms list-chevron">chevron_right</span></div>
+          <div class="list-row" onclick="openWalletTx('acct')"><span class="ms" style="font-size:19px;color:var(--green);">account_balance_wallet</span><div style="flex:1;"><div style="font:600 12.5px Poppins,sans-serif;">Wallet &amp; Transactions</div></div><span class="ms list-chevron">chevron_right</span></div>
+          <div class="list-row" onclick="openEditProfile('acct')"><span class="ms" style="font-size:19px;color:var(--green);">location_on</span><div style="flex:1;"><div style="font:600 12.5px Poppins,sans-serif;">Delivery location</div><div class="acct-profile-location" style="font-size:10px;color:#9A9A9A;margin-top:1px;">—</div></div><span class="ms list-chevron">chevron_right</span></div>
+        </div>
+        <div class="list-group" style="margin:10px 0 0;">
+          <div class="list-row" onclick="acctSignOut()"><span class="ms" style="font-size:19px;color:var(--red);">logout</span><div style="flex:1;font:600 12.5px Poppins,sans-serif;color:var(--red);">Log out</div></div>
+        </div>
       </div>
     </div>
     <div class="list-group" style="margin-top:14px;">
@@ -1035,6 +1112,113 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
 </div><!-- /app -->
 </div><!-- /mobile-shell -->
 
+<!-- SESSION TIMEOUT (outside both shells so it isn't hidden by either's display:none) -->
+<div id="timeout-overlay" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(26,26,26,.45);align-items:center;justify-content:center;">
+  <div style="width:280px;max-width:88vw;background:#fff;border-radius:22px;padding:26px 22px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.3);">
+    <div style="width:64px;height:64px;border-radius:50%;background:var(--yellow-tint,#FFF3D6);display:flex;align-items:center;justify-content:center;margin:0 auto;"><span class="ms" style="font-size:34px;color:#E8A317;">schedule</span></div>
+    <div style="font:700 18px Poppins,sans-serif;color:var(--dark);margin-top:16px;">You've been away a while</div>
+    <div style="font-size:13px;color:var(--muted);margin-top:7px;line-height:1.5;">Your session timed out after 4 hours. Let's refresh today's menu and prices.</div>
+    <button onclick="location.reload()" style="width:100%;margin-top:20px;border:none;border-radius:13px;background:var(--green);color:#fff;font:700 13px Poppins,sans-serif;padding:13px;cursor:pointer;">Refresh menu</button>
+    <div style="margin-top:12px;font:600 12px Poppins,sans-serif;color:var(--muted);cursor:pointer;" onclick="dismissTimeoutForSignIn()">Sign in again</div>
+  </div>
+</div>
+
+<!-- ACCOUNT-LINKED MODALS (wallet checkout, top-up, edit profile, order history, transactions)
+     placed outside both shells — unlike the WhatsApp-flow modals above, these need to work
+     on desktop too, and anything nested inside #mobile-shell is display:none above 1024px. -->
+<div class="modal-overlay" id="wallet-checkout-modal" onclick="if(event.target===this)closeWalletCheckout()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Confirm Order</div>
+    <div class="order-list-box" id="wallet-order-items-list"></div>
+    <div class="cbd-note"><span>📍</span><span>We deliver within <strong>Nairobi CBD only</strong>.</span></div>
+    <div class="field-group">
+      <label class="field-label">Delivery location <span class="field-req">*</span></label>
+      <input type="text" id="wallet-delivery-location" class="field-input" placeholder="e.g. Anniversary Towers, Moi Ave">
+      <div class="field-hint">Building or landmark within Nairobi CBD.</div>
+      <div class="field-err" id="wallet-location-error">Please enter your delivery location.</div>
+    </div>
+    <div style="border:1.5px solid var(--green);border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:11px;background:#F3FBF9;margin-top:4px;">
+      <span class="ms msfill" style="font-size:22px;color:var(--green);">account_balance_wallet</span>
+      <div style="flex:1;"><div style="font:700 13px Poppins,sans-serif;color:var(--dark);">Wallet</div><div style="font-size:11px;color:var(--green-dark);">Balance <span class="acct-wallet-balance">KES 0</span></div></div>
+      <span class="ms msfill" style="font-size:21px;color:var(--green);">radio_button_checked</span>
+    </div>
+    <div class="field-err" id="wallet-insufficient-error" style="margin-top:8px;">Insufficient wallet balance — top up to continue.</div>
+    <div style="height:1px;background:var(--border2);margin:12px 0;"></div>
+    <div style="display:flex;justify-content:space-between;font:700 15px Poppins,sans-serif;color:var(--dark);padding:0 0 12px;"><span>Total</span><span>KES <span id="wallet-summary-total">0</span></span></div>
+    <button class="wa-order-btn" id="wallet-pay-btn" style="background:var(--green);" onclick="handleWalletOrder()"><span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet</button>
+    <button class="clear-link" onclick="closeWalletCheckout()">Back to menu</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="topup-modal" onclick="if(event.target===this)closeTopUp()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Top up wallet</div>
+    <div style="background:var(--dark);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:11px;margin-bottom:16px;">
+      <span class="ms msfill" style="font-size:22px;color:var(--yellow);">account_balance_wallet</span>
+      <div><div style="font-size:10.5px;color:#9A9A9A;">Current balance</div><div class="acct-wallet-balance" style="font:700 17px Poppins,sans-serif;color:#fff;">KES 0</div></div>
+    </div>
+    <div class="field-label" style="margin-bottom:9px;">CHOOSE AMOUNT</div>
+    <div id="topup-amount-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;"></div>
+    <div class="field-group" id="topup-other-group" style="display:none;margin-top:10px;">
+      <input type="number" id="topup-other-amount" class="field-input" placeholder="Enter amount (KES)">
+    </div>
+    <div style="margin-top:14px;background:var(--yellow-tint);border-radius:12px;padding:12px 14px;font-size:11.5px;color:#7A5300;line-height:1.5;">
+      Send <strong>KES <span id="topup-instruction-amount">750</span></strong> via M-Pesa to <strong>0790373027 (Silvia)</strong>. Once received, we'll update your wallet balance from our dashboard — usually within a few minutes.
+    </div>
+    <button class="wa-order-btn" style="background:var(--green);" onclick="confirmTopUpWA()"><span style="font-size:18px;">📲</span>I've sent it — notify us</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="edit-profile-modal" onclick="if(event.target===this)closeEditProfile()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Edit profile</div>
+    <div style="display:flex;justify-content:center;padding:2px 0 16px;"><div class="acct-avatar-circle acct-profile-initials" style="width:72px;height:72px;font-size:24px;">—</div></div>
+    <div class="field-group">
+      <label class="field-label">FULL NAME</label>
+      <input type="text" id="edit-profile-name" class="field-input" placeholder="Full name">
+    </div>
+    <div class="field-group">
+      <label class="field-label">BUILDING / OFFICE</label>
+      <input type="text" id="edit-profile-building" class="field-input" placeholder="e.g. Kalamu House, 4th Floor">
+    </div>
+    <div class="field-group">
+      <label class="field-label">STREET / LANDMARK</label>
+      <input type="text" id="edit-profile-street" class="field-input" placeholder="e.g. Banda Street, near GPO">
+    </div>
+    <div class="field-group">
+      <label class="field-label">M-PESA PAYMENT NUMBER</label>
+      <div style="display:flex;align-items:center;gap:9px;border:1.5px solid var(--border);border-radius:12px;padding:13px 14px;background:#F7F7F7;"><span class="acct-profile-phone" style="font-size:14px;color:var(--mid);">—</span></div>
+      <div class="field-hint">Same as your account phone number.</div>
+    </div>
+    <div class="field-err" id="edit-profile-err">Please fill in your name and building.</div>
+    <button class="wa-order-btn" style="background:var(--green);" onclick="saveEditProfile()">Save changes</button>
+    <button class="clear-link" onclick="closeEditProfile()">Cancel</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="order-history-modal" onclick="if(event.target===this)closeOrderHistory()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Order History</div>
+    <div id="order-history-list" style="max-height:60vh;overflow-y:auto;"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="wallet-tx-modal" onclick="if(event.target===this)closeWalletTx()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Wallet</div>
+    <div style="background:var(--dark);border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <div><div style="font-size:10.5px;color:#9A9A9A;">Available balance</div><div class="acct-wallet-balance" style="font:700 20px Poppins,sans-serif;color:#fff;">KES 0</div></div>
+      <button onclick="openTopUp()" style="border:none;border-radius:10px;background:var(--yellow);color:var(--dark);font:700 12px Poppins,sans-serif;padding:10px 14px;cursor:pointer;">Top up</button>
+    </div>
+    <div id="wallet-tx-list" style="max-height:50vh;overflow-y:auto;"></div>
+  </div>
+</div>
+
 <!-- FIREBASE (compat SDK — keeps everything in plain global-scope JS,
      matching how the rest of this file's functions/onclick handlers work) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -1171,10 +1355,23 @@ function acctRenderProfile(){
   document.querySelectorAll('.acct-profile-name').forEach(el=>el.textContent=acctProfile?.fullName||'Nairobi Dishes customer');
   document.querySelectorAll('.acct-profile-phone').forEach(el=>el.textContent=acctProfile?.phone?('0'+acctProfile.phone.slice(3)):'');
   document.querySelectorAll('.acct-profile-initials').forEach(el=>el.textContent=acctInitials(acctProfile?.fullName));
+  document.querySelectorAll('.acct-profile-location').forEach(el=>el.textContent=acctProfile?.delivery?.building?`${acctProfile.delivery.building}, Nairobi CBD`:'Not set yet');
 }
+/* ══ ACCOUNT-LINKED DATA (wallet + saved weekly order) ══ */
+let acctWallet={balance:0};
+let acctWeeklyOrder=null; // {selections:{...}, updatedAt} or null
+let unsubWallet=null,unsubWeeklyOrder=null;
+
+function acctEnsureWallet(uid){
+  const ref=fbDb.collection('wallets').doc(uid);
+  ref.get().then(snap=>{if(!snap.exists())ref.set({balance:0});});
+}
+
 fbAuth.onAuthStateChanged(user=>{
   const outBlocks=document.querySelectorAll('.acct-signedout-block');
   const inBlocks=document.querySelectorAll('.acct-signedin-block');
+  if(unsubWallet){unsubWallet();unsubWallet=null;}
+  if(unsubWeeklyOrder){unsubWeeklyOrder();unsubWeeklyOrder=null;}
   if(user){
     outBlocks.forEach(el=>el.style.display='none');
     inBlocks.forEach(el=>el.style.display='block');
@@ -1182,15 +1379,41 @@ fbAuth.onAuthStateChanged(user=>{
       acctProfile=snap.exists()?snap.data():null;
       acctRenderProfile();
     });
+    acctEnsureWallet(user.uid);
+    unsubWallet=fbDb.collection('wallets').doc(user.uid).onSnapshot(snap=>{
+      acctWallet=snap.exists()?snap.data():{balance:0};
+      acctRenderWallet();
+    });
+    unsubWeeklyOrder=fbDb.collection('weeklyOrders').doc(user.uid).onSnapshot(snap=>{
+      acctWeeklyOrder=snap.exists()?snap.data():null;
+      if(!weeklyHasUnsavedChange&&acctWeeklyOrder?.selections){
+        weeklySelections={...acctWeeklyOrder.selections};
+      }
+      syncWeeklyViews();
+    });
+    acctUpdateTodayForAuth();
   }else{
     outBlocks.forEach(el=>el.style.display='block');
     inBlocks.forEach(el=>el.style.display='none');
-    acctProfile=null;
+    acctProfile=null;acctWallet={balance:0};acctWeeklyOrder=null;
     // reset both scopes back to the landing choice screen on sign-out
     acctGoScreen('acct','landing');
     acctGoScreen('dsacct','landing');
+    acctUpdateTodayForAuth();
+    syncWeeklyViews();
   }
 });
+
+function acctRenderWallet(){
+  document.querySelectorAll('.acct-wallet-balance').forEach(el=>el.textContent='KES '+acctWallet.balance.toLocaleString('en-KE'));
+}
+function acctUpdateTodayForAuth(){
+  const signedIn=!!fbAuth.currentUser;
+  document.querySelectorAll('.wallet-chip-block').forEach(el=>el.style.display=signedIn?'flex':'none');
+  acctRenderWallet();
+  updateBars();
+  if(typeof renderDesktopOrderPanel==='function')renderDesktopOrderPanel();
+}
 
 
 
@@ -1383,16 +1606,27 @@ function changeQty(id,delta){
 function cartTotal(){return cart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);}
 function updateBars(){
   const ob=document.getElementById('order-bar'),sb=document.getElementById('success-bar');
-  if(placed){ob.style.display='none';sb.style.display='flex';return;}
+  if(placed){
+    ob.style.display='none';
+    sb.style.display=fbAuth.currentUser?'none':'flex'; // wallet orders show the rich success card instead
+    return;
+  }
   const show=currentView==='daily'&&orderOpen&&cart.length>0;
   ob.style.display=show?'block':'none';sb.style.display='none';
   if(show){
     document.getElementById('bar-count').textContent=cart.length+' item'+(cart.length>1?'s':'');
     document.getElementById('bar-total').textContent='KES '+cartTotal();
+    const btn=document.getElementById('order-bar-checkout-btn');
+    if(fbAuth.currentUser)btn.innerHTML='<span class="ms msfill" style="font-size:16px;">shopping_bag</span>Checkout';
+    else btn.innerHTML='<span class="ms msfill" style="font-size:16px;">payments</span>Order via WhatsApp';
   }
 }
 
 /* ══ CHECKOUT ══ */
+function openCheckoutSmart(){
+  if(fbAuth.currentUser)openWalletCheckout();
+  else openCheckout();
+}
 function openCheckout(){
   const uniq=[...new Set(cart)];
   document.getElementById('order-items-list').innerHTML=uniq.map(id=>{
@@ -1425,6 +1659,202 @@ function handleOrder(){
   setTimeout(()=>{window.location.href=`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`;},300);
 }
 function closeCheckout(){document.getElementById('checkout-modal').classList.remove('open');}
+
+function openWalletCheckout(){
+  const uniq=[...new Set(cart)];
+  document.getElementById('wallet-order-items-list').innerHTML=uniq.map(id=>{
+    const d=MENU.find(m=>m.id===id),q=getQty(id);
+    return`<div class="order-item-row"><span style="font-size:12px;font-weight:600;flex:1;">${d.name}</span><span style="font-size:11px;color:var(--muted);margin:0 6px;">×${q}</span><span style="font-size:12px;color:var(--green);font-weight:700;">KES ${d.price*q}</span><span class="order-item-remove" onclick="removeAllOfDishWallet(${id})">✕</span></div>`;
+  }).join('');
+  document.getElementById('wallet-summary-total').textContent=cartTotal();
+  const loc=document.getElementById('wallet-delivery-location');
+  loc.value=acctProfile?.delivery?.building?`${acctProfile.delivery.building}, ${acctProfile.delivery.street||''}`.replace(/,\s*$/,''):'';
+  loc.classList.remove('err');
+  document.getElementById('wallet-location-error').style.display='none';
+  document.getElementById('wallet-insufficient-error').style.display=acctWallet.balance<cartTotal()?'block':'none';
+  document.getElementById('wallet-pay-btn').disabled=acctWallet.balance<cartTotal();
+  document.getElementById('wallet-checkout-modal').classList.add('open');
+}
+function removeAllOfDishWallet(id){cart=cart.filter(x=>x!==id);if(cart.length===0){closeWalletCheckout();updateBars();renderDishes();return;}openWalletCheckout();updateBars();renderDishes();}
+function closeWalletCheckout(){document.getElementById('wallet-checkout-modal').classList.remove('open');}
+
+function handleWalletOrder(){
+  const loc=document.getElementById('wallet-delivery-location'),location=loc.value.trim();
+  if(!location){loc.classList.add('err');document.getElementById('wallet-location-error').style.display='block';loc.focus();return;}
+  loc.classList.remove('err');document.getElementById('wallet-location-error').style.display='none';
+  const total=cartTotal();
+  if(acctWallet.balance<total){document.getElementById('wallet-insufficient-error').style.display='block';return;}
+  const user=fbAuth.currentUser;if(!user)return;
+  const uniq=[...new Set(cart)];
+  const items=uniq.map(id=>{const d=MENU.find(m=>m.id===id),q=getQty(id);return{name:d.name,qty:q,price:d.price*q};});
+  const orderRef=fbDb.collection('orders').doc();
+  const walletRef=fbDb.collection('wallets').doc(user.uid);
+  const txRef=walletRef.collection('transactions').doc();
+  const btn=document.getElementById('wallet-pay-btn');btn.disabled=true;btn.textContent='Placing order…';
+  fbDb.runTransaction(t=>t.get(walletRef).then(snap=>{
+    const bal=snap.exists()?snap.data().balance:0;
+    if(bal<total)throw new Error('insufficient');
+    t.update(walletRef,{balance:bal-total});
+    t.set(txRef,{type:'order',amount:-total,note:'Order '+orderRef.id.slice(0,6).toUpperCase(),createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+    t.set(orderRef,{uid:user.uid,items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+  }))
+  .then(()=>{
+    closeWalletCheckout();
+    showWalletOrderSuccess({ref:orderRef.id.slice(0,6).toUpperCase(),items,total,location});
+    cart=[];placed=true;updateBars();renderDishes();
+  })
+  .catch(()=>{document.getElementById('wallet-insufficient-error').style.display='block';})
+  .finally(()=>{btn.disabled=false;btn.innerHTML='<span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet';});
+}
+
+let lastWalletOrder=null;
+function showWalletOrderSuccess(order){
+  lastWalletOrder=order;
+  renderWalletOrderSuccess();
+  document.getElementById('wallet-success-card').style.display='block';
+  document.getElementById('menu-block').style.display='none';
+}
+function renderWalletOrderSuccess(){
+  if(!lastWalletOrder)return;
+  const o=lastWalletOrder;
+  document.getElementById('wallet-success-items').innerHTML=o.items.map(it=>
+    `<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--dark);padding:5px 0;"><span>${it.name}${it.qty>1?` ×${it.qty}`:''}</span><span style="font-weight:700;">KES ${it.price}</span></div>`
+  ).join('');
+  document.getElementById('wallet-success-ref').textContent='ND-'+o.ref;
+  document.getElementById('wallet-success-location').textContent=o.location+', Nairobi CBD';
+  document.getElementById('wallet-success-total').textContent=o.total;
+}
+function walletOrderTrackWA(){
+  if(!lastWalletOrder)return;
+  const msg=`Hi! I'd like to track my order ND-${lastWalletOrder.ref}, paid from my wallet.`;
+  window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+function walletOrderReceipt(){
+  if(!lastWalletOrder)return;
+  const o=lastWalletOrder;
+  const lines=o.items.map(it=>`${it.name}${it.qty>1?` ×${it.qty}`:''} — KES ${it.price}`).join('\n');
+  alert(`Nairobi Dishes — Receipt\nOrder ND-${o.ref}\n\n${lines}\n\nTotal: KES ${o.total}\nDeliver to: ${o.location}, Nairobi CBD\nPaid from wallet`);
+}
+function dismissWalletOrderSuccess(){
+  document.getElementById('wallet-success-card').style.display='none';
+  document.getElementById('menu-block').style.display='block';
+  placed=false;updateBars();
+}
+
+/* ══ TOP UP WALLET (manual M-Pesa to Silvia, no STK) ══ */
+const TOPUP_PRESETS=[150,750,1500,3000,5000];
+let topupSelected=750;
+function openTopUp(){
+  topupSelected=750;
+  renderTopupGrid();
+  document.getElementById('topup-other-group').style.display='none';
+  document.getElementById('topup-other-amount').value='';
+  document.getElementById('topup-instruction-amount').textContent=topupSelected;
+  document.getElementById('topup-modal').classList.add('open');
+}
+function renderTopupGrid(){
+  const grid=document.getElementById('topup-amount-grid');
+  grid.innerHTML=TOPUP_PRESETS.map(a=>`<div onclick="selectTopupAmount(${a})" style="border:1.5px solid ${a===topupSelected?'var(--green)':'var(--border)'};background:${a===topupSelected?'#F3FBF9':'#fff'};border-radius:12px;padding:13px 0;text-align:center;font:700 13px Poppins,sans-serif;color:${a===topupSelected?'var(--green-dark)':'var(--dark)'};cursor:pointer;">${a.toLocaleString('en-KE')}</div>`).join('')
+    +`<div onclick="selectTopupAmount('other')" style="border:1.5px solid ${topupSelected==='other'?'var(--green)':'var(--border)'};background:${topupSelected==='other'?'#F3FBF9':'#fff'};border-radius:12px;padding:13px 0;text-align:center;font:600 13px Poppins,sans-serif;color:${topupSelected==='other'?'var(--green-dark)':'var(--muted)'};cursor:pointer;">Other</div>`;
+}
+function selectTopupAmount(a){
+  topupSelected=a;
+  renderTopupGrid();
+  const otherGroup=document.getElementById('topup-other-group');
+  otherGroup.style.display=a==='other'?'block':'none';
+  document.getElementById('topup-instruction-amount').textContent=a==='other'?(document.getElementById('topup-other-amount').value||'0'):a;
+}
+document.addEventListener('input',e=>{
+  if(e.target&&e.target.id==='topup-other-amount'){document.getElementById('topup-instruction-amount').textContent=e.target.value||'0';}
+});
+function closeTopUp(){document.getElementById('topup-modal').classList.remove('open');}
+function confirmTopUpWA(){
+  const amount=topupSelected==='other'?Number(document.getElementById('topup-other-amount').value)||0:topupSelected;
+  if(amount<=0)return;
+  const user=fbAuth.currentUser;
+  if(user){
+    fbDb.collection('topupRequests').add({
+      uid:user.uid,amount,phone:acctProfile?.phone||'',status:'pending',
+      createdAt:firebase.firestore.FieldValue.serverTimestamp()
+    }).catch(()=>{});
+  }
+  const msg=[`👋 Hello Nairobi Dishes!`,'',`I've sent *KES ${amount}* via M-Pesa to *0790373027 (Silvia)* to top up my wallet.`,`My account phone: ${acctProfile?.phone?('0'+acctProfile.phone.slice(3)):''}`,'','_Please confirm and update my balance. Thanks!_'].join('\n');
+  window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
+  closeTopUp();
+}
+
+/* ══ EDIT PROFILE ══ */
+function openEditProfile(){
+  document.getElementById('edit-profile-name').value=acctProfile?.fullName||'';
+  document.getElementById('edit-profile-building').value=acctProfile?.delivery?.building||'';
+  document.getElementById('edit-profile-street').value=acctProfile?.delivery?.street||'';
+  document.getElementById('edit-profile-err').style.display='none';
+  document.getElementById('edit-profile-modal').classList.add('open');
+}
+function closeEditProfile(){document.getElementById('edit-profile-modal').classList.remove('open');}
+function saveEditProfile(){
+  const name=document.getElementById('edit-profile-name').value.trim();
+  const building=document.getElementById('edit-profile-building').value.trim();
+  const street=document.getElementById('edit-profile-street').value.trim();
+  const err=document.getElementById('edit-profile-err');
+  if(!name||!building){err.style.display='block';return;}
+  err.style.display='none';
+  const user=fbAuth.currentUser;if(!user)return;
+  fbDb.collection('users').doc(user.uid).update({
+    fullName:name,delivery:{building,street}
+  }).then(()=>{
+    acctProfile={...acctProfile,fullName:name,delivery:{building,street}};
+    acctRenderProfile();
+    closeEditProfile();
+  }).catch(()=>{err.textContent='Something went wrong saving your profile. Please try again.';err.style.display='block';});
+}
+
+/* ══ ORDER HISTORY ══ */
+function openOrderHistory(){
+  const user=fbAuth.currentUser;if(!user)return;
+  const list=document.getElementById('order-history-list');
+  list.innerHTML='<div style="text-align:center;padding:20px 0;color:var(--muted);font-size:12px;">Loading…</div>';
+  document.getElementById('order-history-modal').classList.add('open');
+  fbDb.collection('orders').where('uid','==',user.uid).orderBy('createdAt','desc').limit(30).get()
+    .then(snap=>{
+      if(snap.empty){list.innerHTML='<div style="text-align:center;padding:24px 0;color:var(--muted);font-size:12px;">No orders yet.</div>';return;}
+      list.innerHTML=snap.docs.map(doc=>{
+        const o=doc.data();
+        const date=o.createdAt?.toDate?o.createdAt.toDate().toLocaleDateString('en-KE',{weekday:'short',day:'numeric',month:'short'}):'';
+        const itemNames=(o.items||[]).map(it=>it.name+(it.qty>1?` ×${it.qty}`:'')).join(', ');
+        return`<div style="padding:11px 0;border-bottom:1px solid var(--border2);">
+          <div style="display:flex;justify-content:space-between;"><span style="font:600 12.5px Poppins,sans-serif;">${itemNames}</span><span style="font:700 13px Poppins,sans-serif;color:var(--dark);">KES ${o.total}</span></div>
+          <div style="font-size:10.5px;color:var(--muted);margin-top:2px;">${date} · ${o.deliverTo||''}</div>
+        </div>`;
+      }).join('');
+    })
+    .catch(()=>{list.innerHTML='<div style="text-align:center;padding:20px 0;color:var(--red);font-size:12px;">Could not load order history.</div>';});
+}
+function closeOrderHistory(){document.getElementById('order-history-modal').classList.remove('open');}
+
+/* ══ WALLET & TRANSACTIONS ══ */
+function openWalletTx(){
+  const user=fbAuth.currentUser;if(!user)return;
+  const list=document.getElementById('wallet-tx-list');
+  list.innerHTML='<div style="text-align:center;padding:20px 0;color:var(--muted);font-size:12px;">Loading…</div>';
+  document.getElementById('wallet-tx-modal').classList.add('open');
+  fbDb.collection('wallets').doc(user.uid).collection('transactions').orderBy('createdAt','desc').limit(30).get()
+    .then(snap=>{
+      if(snap.empty){list.innerHTML='<div style="text-align:center;padding:24px 0;color:var(--muted);font-size:12px;">No transactions yet.</div>';return;}
+      list.innerHTML=snap.docs.map(doc=>{
+        const tx=doc.data();
+        const date=tx.createdAt?.toDate?tx.createdAt.toDate().toLocaleDateString('en-KE',{weekday:'short',day:'numeric',month:'short'}):'';
+        const positive=tx.amount>0;
+        return`<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border2);">
+          <div style="flex:1;"><div style="font:600 12.5px Poppins,sans-serif;">${tx.note||(positive?'Top up':'Order')}</div><div style="font-size:10.5px;color:var(--muted);">${date}</div></div>
+          <span style="font:700 13px Poppins,sans-serif;color:${positive?'var(--green)':'var(--dark)'};">${positive?'+':''}${tx.amount}</span>
+        </div>`;
+      }).join('');
+    })
+    .catch(()=>{list.innerHTML='<div style="text-align:center;padding:20px 0;color:var(--red);font-size:12px;">Could not load transactions.</div>';});
+}
+function closeWalletTx(){document.getElementById('wallet-tx-modal').classList.remove('open');}
+
 function closeAndClear(){cart=[];placed=false;giftOn=false;updateGiftUI();closeCheckout();updateBars();renderDishes();}
 function toggleGift(){giftOn=!giftOn;updateGiftUI();}
 function updateGiftUI(){document.getElementById('gift-switch').classList.toggle('on',giftOn);document.getElementById('gift-phone-group').style.display=giftOn?'block':'none';}
@@ -1466,7 +1896,13 @@ function sendSubscribeWA(){
 }
 
 /* ══ WEEKLY ROWS (mobile) ══ */
+function hasSavedWeeklyOrder(){return!!(acctWeeklyOrder&&acctWeeklyOrder.selections&&Object.keys(acctWeeklyOrder.selections).length>0);}
+let weeklyHasUnsavedChange=false;
+
 function renderWeekly(){
+  const c0=document.getElementById('weekly-rows');if(!c0)return;
+  if(fbAuth.currentUser&&hasSavedWeeklyOrder()){renderWeeklySavedView();return;}
+  const savebar=document.getElementById('weekly-account-save-bar');if(savebar)savebar.style.display='none';
   const todayIdx=todayWeekIdx();
   const c=document.getElementById('weekly-rows');if(!c)return;
   c.innerHTML=WEEKLY_MENU.map((d,i)=>{
@@ -1496,6 +1932,70 @@ function renderWeekly(){
     </div>`;
   }).join('');
   updateWeeklySummary();
+}
+
+/* account users with an existing saved weekly order: compact "your order" view */
+function renderWeeklySavedView(){
+  const c=document.getElementById('weekly-rows');if(!c)return;
+  const days=Object.keys(weeklySelections).map(Number).sort((a,b)=>a-b);
+  c.innerHTML=`<div style="padding:4px 2px 10px;font-size:11px;color:var(--muted);line-height:1.5;">This is your saved weekly order. Tap <strong>Change</strong> to swap a meal.</div>`+
+    days.map(i=>{
+      const d=WEEKLY_MENU[i];if(!d)return'';
+      const isPast=weeklyDayIsPast(i);
+      const dayLabel=isPast?`${d.day}<div style="font-size:7.5px;color:var(--muted);font-weight:700;letter-spacing:.03em;">NEXT WEEK</div>`:d.day;
+      return`<div class="weekly-row">
+        <div class="wr-head" onclick="acctToggleChangeDay(${i})">
+          <div class="wr-day">${dayLabel}</div>
+          <div class="wr-summary"><span style="color:var(--green);font-weight:700;">${weeklySelections[i]}</span></div>
+          <button class="add-btn weekly-sel" style="font-size:9px;padding:5px 8px;" onclick="event.stopPropagation();acctToggleChangeDay(${i})">Change</button>
+        </div>
+        <div class="wr-panel" id="wrp-${i}">
+          <div class="wr-panel-title">CHANGE MEAL FOR ${d.day.toUpperCase()}</div>
+          ${d.meals.map(m=>`<div class="wr-meal-option${weeklySelections[i]===m?' selected':''}" onclick="acctSelectChangeMeal(${i},'${m}')">
+            <span class="ms msfill wr-check" style="color:${weeklySelections[i]===m?'var(--yellow)':'#DDD'};">${weeklySelections[i]===m?'check_circle':'radio_button_unchecked'}</span>
+            <span class="wr-meal-name">${m}</span>
+            <span class="wr-meal-price">KES 150</span>
+          </div>`).join('')}
+        </div>
+      </div>`;
+    }).join('');
+  const summaryBar=document.getElementById('weekly-summary');if(summaryBar)summaryBar.style.display='none';
+  const saveBar=document.getElementById('weekly-account-save-bar');
+  if(saveBar)saveBar.style.display=weeklyHasUnsavedChange?'block':'none';
+}
+function acctToggleChangeDay(i){
+  const panel=document.getElementById('wrp-'+i);if(!panel)return;
+  const isOpen=panel.classList.contains('open');
+  document.querySelectorAll('.wr-panel').forEach(p=>p.classList.remove('open'));
+  if(!isOpen)panel.classList.add('open');
+}
+function acctSelectChangeMeal(i,meal){
+  if(weeklySelections[i]===meal)return;
+  weeklySelections[i]=meal;
+  weeklyHasUnsavedChange=true;
+  renderWeeklySavedView();
+  const panel=document.getElementById('wrp-'+i);if(panel)panel.classList.add('open');
+}
+function acctSaveWeeklyUpdate(){
+  const user=fbAuth.currentUser;if(!user)return;
+  const days=Object.keys(weeklySelections).map(Number).sort((a,b)=>a-b);
+  const lines=days.map(i=>{const isPast=weeklyDayIsPast(i);return`${WEEKLY_MENU[i].day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES 150`;}).join(',\n');
+  const total=days.length*150;
+  const buildingLoc=acctProfile?.delivery?.building?`${acctProfile.delivery.building}${acctProfile.delivery.street?', '+acctProfile.delivery.street:''}`:'your saved delivery location';
+  const msg=['🍱 *Weekly Order Update — Nairobi Dishes*','',
+    '*Items:*',lines,'',
+    `*Total:* KES ${total}`,
+    `*Delivery:* ${buildingLoc}, Nairobi CBD`,'',
+    '_This updates my existing weekly order. Please confirm._'
+  ].join('\n');
+  fbDb.collection('weeklyOrders').doc(user.uid).set({selections:{...weeklySelections},updatedAt:firebase.firestore.FieldValue.serverTimestamp()})
+    .then(()=>{
+      weeklyHasUnsavedChange=false;
+      document.querySelectorAll('.wr-panel').forEach(p=>p.classList.remove('open'));
+      renderWeeklySavedView();
+      setTimeout(()=>{window.location.href=`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`;},300);
+    })
+    .catch(()=>{alert('Could not save your update. Please try again.');});
 }
 
 function toggleWeekDay(i){
@@ -1561,6 +2061,13 @@ function handleWeeklyOrder(){
   days.forEach(({i})=>weeklyConfirmed[i]=true);
   closeWeeklyCheckout();
   syncWeeklyViews();
+  const user=fbAuth.currentUser;
+  if(user){
+    fbDb.collection('weeklyOrders').doc(user.uid).set({
+      selections:{...weeklySelections},
+      updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+    }).catch(()=>{});
+  }
   setTimeout(()=>{window.location.href=`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`;},300);
 }
 
@@ -1592,10 +2099,18 @@ function renderDsWeekMealOptions(){
 function dsSelectWeekMeal(i,m){
   if(weeklySelections[i]===m){delete weeklySelections[i];delete weeklyConfirmed[i];}
   else{weeklySelections[i]=m;delete weeklyConfirmed[i];}
+  if(fbAuth.currentUser&&hasSavedWeeklyOrder())weeklyHasUnsavedChange=true;
   syncWeeklyViews();
 }
 function updateDsWeeklySummary(){
   const el=document.getElementById('ds-weekly-summary');if(!el)return;
+  const saveBar=document.getElementById('ds-weekly-account-save-bar');
+  if(fbAuth.currentUser&&hasSavedWeeklyOrder()){
+    el.style.display='none';
+    if(saveBar)saveBar.style.display=weeklyHasUnsavedChange?'block':'none';
+    return;
+  }
+  if(saveBar)saveBar.style.display='none';
   const n=weeklySelectedDays().length;
   el.style.display=n>0?'block':'none';
   document.getElementById('ds-weekly-summary-count').textContent=n+' day'+(n!==1?'s':'')+' selected';
@@ -1716,10 +2231,27 @@ function renderDesktopOrderPanel(){
     const d=MENU.find(m=>m.id===id),q=dsCart.filter(x=>x===id).length;
     return`<div class="order-item-row"><span style="font-size:12px;font-weight:600;flex:1;">${d.name}</span><span style="font-size:11px;color:var(--muted);margin:0 4px;">×${q}</span><span style="font-size:12px;color:var(--green);font-weight:700;">KES ${d.price*q}</span><span class="order-item-remove" onclick="dsRemoveDish(${id})">✕</span></div>`;
   }).join('');
-  document.getElementById('ds-order-total').textContent=dsCart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);
+  const total=dsCart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);
+  document.getElementById('ds-order-total').textContent=total;
+  const btn=document.getElementById('ds-order-btn');
+  const insufficientErr=document.getElementById('ds-wallet-insufficient-err');
+  if(fbAuth.currentUser){
+    btn.innerHTML='<span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet';
+    insufficientErr.style.display=acctWallet.balance<total?'block':'none';
+    if(!document.getElementById('ds-delivery-loc').value&&acctProfile?.delivery?.building){
+      document.getElementById('ds-delivery-loc').value=`${acctProfile.delivery.building}${acctProfile.delivery.street?', '+acctProfile.delivery.street:''}`;
+    }
+  }else{
+    btn.innerHTML='<span style="font-size:18px;">📲</span>Order via WhatsApp';
+    insufficientErr.style.display='none';
+  }
 }
 function dsRemoveDish(id){dsCart=dsCart.filter(x=>x!==id);renderDesktopMenu();renderDesktopOrderPanel();}
 function dsClearCart(){dsCart=[];renderDesktopMenu();renderDesktopOrderPanel();}
+function dsHandleOrderSmart(){
+  if(fbAuth.currentUser)dsHandleWalletOrder();
+  else dsHandleOrder();
+}
 function dsHandleOrder(){
   const loc=document.getElementById('ds-delivery-loc'),location=loc.value.trim();
   if(!location){loc.classList.add('err');document.getElementById('ds-loc-err').style.display='block';loc.focus();return;}
@@ -1731,11 +2263,51 @@ function dsHandleOrder(){
   window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
   dsClearCart();
 }
+function dsHandleWalletOrder(){
+  const loc=document.getElementById('ds-delivery-loc'),location=loc.value.trim();
+  if(!location){loc.classList.add('err');document.getElementById('ds-loc-err').style.display='block';loc.focus();return;}
+  loc.classList.remove('err');document.getElementById('ds-loc-err').style.display='none';
+  const user=fbAuth.currentUser;if(!user)return;
+  const uniq=[...new Set(dsCart)];
+  const total=dsCart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);
+  if(acctWallet.balance<total){document.getElementById('ds-wallet-insufficient-err').style.display='block';return;}
+  const items=uniq.map(id=>{const d=MENU.find(m=>m.id===id),q=dsCart.filter(x=>x===id).length;return{name:d.name,qty:q,price:d.price*q};});
+  const orderRef=fbDb.collection('orders').doc();
+  const walletRef=fbDb.collection('wallets').doc(user.uid);
+  const txRef=walletRef.collection('transactions').doc();
+  const btn=document.getElementById('ds-order-btn');btn.disabled=true;btn.textContent='Placing order…';
+  fbDb.runTransaction(t=>t.get(walletRef).then(snap=>{
+    const bal=snap.exists()?snap.data().balance:0;
+    if(bal<total)throw new Error('insufficient');
+    t.update(walletRef,{balance:bal-total});
+    t.set(txRef,{type:'order',amount:-total,note:'Order '+orderRef.id.slice(0,6).toUpperCase(),createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+    t.set(orderRef,{uid:user.uid,items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+  }))
+  .then(()=>{
+    dsClearCart();
+    alert(`Order confirmed! Paid KES ${total} from wallet.\nOrder ND-${orderRef.id.slice(0,6).toUpperCase()}\nArriving from 12:30 PM.`);
+  })
+  .catch(()=>{document.getElementById('ds-wallet-insufficient-err').style.display='block';})
+  .finally(()=>{btn.disabled=false;renderDesktopOrderPanel();});
+}
 
 /* desktop weekly */
 function renderDesktopWeekly(){
   const c=document.getElementById('ds-weekly-rows');if(!c)return;
   const todayIdx=todayWeekIdx();
+  if(fbAuth.currentUser&&hasSavedWeeklyOrder()){
+    const days=Object.keys(weeklySelections).map(Number).sort((a,b)=>a-b);
+    c.innerHTML=days.map(i=>{
+      const d=WEEKLY_MENU[i];if(!d)return'';
+      const isToday=i===todayIdx,isPast=weeklyDayIsPast(i);
+      return`<div class="ds-weekly-row${isToday?' today':''}">
+        <div style="font:700 11px Poppins,sans-serif;color:${isToday?'#E8A317':isPast?'#B0B0B0':'var(--dark)'};">${d.day}${isPast?' <span style="font-size:8px;color:var(--muted);">(NEXT WK)</span>':''}</div>
+        <div style="font-size:11.5px;color:var(--mid);"><strong style="color:var(--green);">${weeklySelections[i]}</strong></div>
+        <div><span class="ms msfill" style="color:var(--green);font-size:16px;">check_circle</span></div>
+      </div>`;
+    }).join('')||'<div style="font-size:12px;color:var(--muted);padding:10px 0;">No saved days yet.</div>';
+    return;
+  }
   c.innerHTML=WEEKLY_MENU.map((d,i)=>{
     const isToday=i===todayIdx,isPast=weeklyDayIsPast(i);
     const confirmed=weeklyConfirmed[i];const selected=weeklySelections[i];
@@ -1791,15 +2363,35 @@ function dsSubscribeWA(plan){subscribeViaWA(plan);}
 /* ══ TIME GATE ══ */
 function applyTimeGate(){
   orderOpen=isOpen();
-  const mb=document.getElementById('menu-block'),cb=document.getElementById('closed-block');
-  if(mb)mb.style.display=orderOpen?'block':'none';
-  if(cb)cb.style.display=orderOpen?'none':'block';
+  const showingWalletSuccess=placed&&fbAuth.currentUser;
+  if(!showingWalletSuccess){
+    const mb=document.getElementById('menu-block'),cb=document.getElementById('closed-block');
+    if(mb)mb.style.display=orderOpen?'block':'none';
+    if(cb)cb.style.display=orderOpen?'none':'block';
+  }
   const{day}=getEAT();const isWeekend=day===0||day===6;
   const sub=document.getElementById('closed-sub-text');
   if(sub)sub.innerHTML=isWeekend?'We only operate Mon–Fri.<br>Come back Monday before 2:30 PM!':'We stopped taking orders at 2:30 PM.<br>Come back tomorrow before 2:30 PM.';
-  updateBanner();updateDsBanner();renderDishes();renderDesktopMenu();syncWeeklyViews();updateBars();checkOrderReminder();
+  updateBanner();updateDsBanner();renderDishes();renderDesktopMenu();syncWeeklyViews();updateBars();checkOrderReminder();checkSessionTimeout();
 }
 function scheduleTimeGate(){applyTimeGate();const n=new Date();const ms=(60-n.getSeconds())*1000-n.getMilliseconds();setTimeout(()=>{applyTimeGate();setInterval(applyTimeGate,60000);},ms);}
+
+/* ══ SESSION TIMEOUT (4hr inactivity) ══ */
+const SESSION_TIMEOUT_MS=4*60*60*1000;
+let lastActivityAt=Date.now();
+['click','touchstart','keydown','scroll'].forEach(evt=>{
+  window.addEventListener(evt,()=>{lastActivityAt=Date.now();},{passive:true});
+});
+function checkSessionTimeout(){
+  const overlay=document.getElementById('timeout-overlay');if(!overlay)return;
+  if(Date.now()-lastActivityAt>SESSION_TIMEOUT_MS){overlay.style.display='flex';}
+}
+function dismissTimeoutForSignIn(){
+  document.getElementById('timeout-overlay').style.display='none';
+  lastActivityAt=Date.now();
+  goTab('account');
+  acctGoScreen('acct','login');
+}
 
 /* ══ PWA ══ */
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;setTimeout(()=>document.getElementById('install-banner').classList.add('show'),30000);});
