@@ -313,27 +313,48 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
 .field-input.err{border-color:var(--red);}
 .field-hint{font-size:10.5px;color:var(--muted);margin-top:4px;}
 .field-err{font-size:10.5px;color:var(--red);margin-top:4px;display:none;}
-.acct-tab-btn{flex:1;border:1.5px solid rgba(255,255,255,.2);background:none;color:#BDBDBD;border-radius:10px;padding:9px;font:700 12px Poppins,sans-serif;cursor:pointer;}
-.acct-tab-btn.active{background:var(--yellow);border-color:var(--yellow);color:var(--dark);}
-.acct-card{margin:14px 14px 0;background:var(--dark);border-radius:16px;padding:22px 18px;}
-.acct-header{text-align:center;margin-bottom:18px;}
-.acct-header-icon{font-size:28px;color:var(--yellow);}
-.acct-header-title{font:700 15px Poppins,sans-serif;color:#fff;margin-top:6px;}
-.acct-header-sub{font-size:11px;color:#BDBDBD;margin-top:3px;line-height:1.5;}
-.acct-tabs{display:flex;gap:8px;margin-bottom:16px;}
-.acct-input-wrap{position:relative;margin-bottom:12px;}
-.acct-input-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:17px;color:#9A9A9A;pointer-events:none;}
-.acct-input{width:100%;box-sizing:border-box;padding:12px 14px 12px 38px;border-radius:10px;border:1.5px solid transparent;background:#fff;font-size:13px;color:var(--dark);font-family:'Nunito Sans',sans-serif;}
-.acct-input:focus{outline:none;border-color:var(--green);}
-.acct-input.pw{padding-right:38px;}
-.acct-input-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:17px;color:#9A9A9A;cursor:pointer;}
-.acct-submit-btn{width:100%;border:none;border-radius:11px;background:var(--green);color:#fff;font:700 13px Poppins,sans-serif;padding:13px;cursor:pointer;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.acct-card{margin:14px 14px 0;background:#fff;border-radius:16px;padding:22px 20px 24px;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+.acct-scr{display:none;}
+.acct-scr.active{display:block;}
+.acct-landing-icon{font-size:40px;color:var(--yellow);}
+.acct-landing-title{font:700 17px Poppins,sans-serif;color:#1A1A1A;margin-top:10px;text-align:center;}
+.acct-landing-sub{font-size:12.5px;color:#8A8A8A;margin-top:4px;text-align:center;line-height:1.5;}
+.acct-landing-btn{width:100%;border:none;border-radius:14px;font:700 14px Poppins,sans-serif;padding:15px;cursor:pointer;margin-top:12px;}
+.acct-landing-btn.primary{background:var(--green);color:#fff;}
+.acct-landing-btn.secondary{background:#fff;color:#1A1A1A;border:1.5px solid #E4E4E4;}
+.acct-scr-header{display:flex;align-items:center;gap:14px;}
+.acct-scr-header .ms{font-size:22px;color:#1A1A1A;cursor:pointer;}
+.acct-scr-header .acct-scr-title{font:700 15px Poppins,sans-serif;color:#1A1A1A;}
+.acct-progress{display:flex;gap:7px;margin-top:18px;}
+.acct-progress-seg{flex:1;height:5px;border-radius:3px;background:#E4E4E4;}
+.acct-progress-seg.done{background:var(--green);}
+.acct-step-label{margin-top:6px;font-size:11px;color:#8A8A8A;}
+.acct-big-title{font:700 20px Poppins,sans-serif;color:#1A1A1A;margin-top:18px;}
+.acct-big-sub{font-size:13px;color:#8A8A8A;margin-top:4px;line-height:1.45;}
+.acct-field-label2{font:700 11px Poppins,sans-serif;color:#5C5C5C;letter-spacing:.04em;margin-bottom:7px;margin-top:16px;}
+.acct-field-box{display:flex;align-items:center;gap:9px;border:1.5px solid #E4E4E4;border-radius:13px;padding:13px 14px;transition:border-color .15s;}
+.acct-field-box:focus-within{border-color:var(--green);}
+.acct-field-box .ms{font-size:19px;color:#A8A8A8;flex:0 0 auto;}
+.acct-field-box:focus-within>.ms{color:var(--green);}
+.acct-field-box input{border:none;outline:none;background:none;font-size:14px;color:#1A1A1A;flex:1;min-width:0;font-family:'Nunito Sans',sans-serif;}
+.acct-field-box .acct-eye{cursor:pointer;color:#A8A8A8;font-size:19px;flex:0 0 auto;}
+.acct-field-hint{margin-top:9px;display:flex;gap:8px;align-items:flex-start;}
+.acct-field-hint .ms{font-size:16px;color:var(--green);}
+.acct-field-hint span.txt{font-size:11.5px;color:#9A9A9A;line-height:1.45;}
+.acct-submit-btn{width:100%;border:none;border-radius:14px;background:var(--green);color:#fff;font:700 14px Poppins,sans-serif;padding:15px;cursor:pointer;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:8px;}
 .acct-submit-btn:disabled{opacity:.6;cursor:default;}
-.acct-forgot{text-align:center;font-size:11px;color:#BDBDBD;margin-top:12px;cursor:pointer;text-decoration:underline;}
+.acct-forgot{text-align:right;margin-top:10px;font:600 12px Poppins,sans-serif;color:var(--green);cursor:pointer;}
+.acct-newhere{text-align:center;margin-top:14px;font-size:13px;color:#8A8A8A;}
+.acct-newhere .link{color:var(--green);font-weight:700;cursor:pointer;}
+.acct-divider{display:flex;align-items:center;gap:10px;margin-top:18px;}
+.acct-divider .ln{flex:1;height:1px;background:#EEE;}
+.acct-divider .or{font-size:11px;color:#B0B0B0;}
+.acct-browse{text-align:center;margin-top:14px;font:700 13px Poppins,sans-serif;color:#1A1A1A;cursor:pointer;}
+.acct-err-box{font-size:11.5px;color:var(--red);margin-top:10px;display:none;}
 .acct-avatar-circle{width:56px;height:56px;border-radius:50%;background:var(--yellow);color:var(--dark);display:flex;align-items:center;justify-content:center;font:700 20px Poppins,sans-serif;margin:0 auto;}
-.acct-profile-name{font:700 15px Poppins,sans-serif;color:#fff;margin-top:10px;text-align:center;}
-.acct-profile-phone{font-size:11.5px;color:#BDBDBD;margin-top:2px;text-align:center;}
-.acct-signout-btn{margin-top:14px;border:1px solid rgba(255,255,255,.25);background:none;color:#fff;border-radius:20px;padding:8px 18px;font:700 11.5px Poppins,sans-serif;cursor:pointer;display:block;margin-left:auto;margin-right:auto;}
+.acct-profile-name{font:700 15px Poppins,sans-serif;color:#1A1A1A;margin-top:10px;text-align:center;}
+.acct-profile-phone{font-size:11.5px;color:#8A8A8A;margin-top:2px;text-align:center;}
+.acct-signout-btn{margin-top:14px;border:1.5px solid #E4E4E4;background:none;color:#1A1A1A;border-radius:20px;padding:8px 18px;font:700 11.5px Poppins,sans-serif;cursor:pointer;display:block;margin-left:auto;margin-right:auto;}
 .gift-toggle{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding:10px 13px;background:var(--green-tint);border-radius:12px;cursor:pointer;}
 .toggle-switch{width:36px;height:20px;background:#ccc;border-radius:20px;position:relative;transition:background .2s;flex-shrink:0;}
 .toggle-switch.on{background:var(--green);}
@@ -480,30 +501,76 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       <div class="ds-section-sub">Manage your subscription, referrals and preferences</div>
       <div class="acct-card" style="margin:0 0 16px;max-width:420px;">
         <div class="acct-signedout-block">
-          <div class="acct-header">
-            <span class="ms msfill acct-header-icon">account_circle</span>
-            <div class="acct-header-title" id="dsacct-header-title">Welcome back</div>
-            <div class="acct-header-sub" id="dsacct-header-sub">Sign in to manage your subscription, referrals and orders.</div>
+
+          <div class="acct-scr active" id="dsacct-scr-landing">
+            <div style="text-align:center;"><span class="ms msfill acct-landing-icon">account_circle</span></div>
+            <div class="acct-landing-title">Your account</div>
+            <div class="acct-landing-sub">Sign in to order your lunch, or create an account to get started.</div>
+            <button class="acct-landing-btn primary" onclick="acctGoScreen('dsacct','login')">Login</button>
+            <button class="acct-landing-btn secondary" onclick="acctGoScreen('dsacct','signup-1')">Create Account</button>
           </div>
-          <div class="acct-tabs">
-            <button id="dsacct-tab-signin" class="acct-tab-btn active" onclick="acctSwitchTab('dsacct','signin')">Sign In</button>
-            <button id="dsacct-tab-signup" class="acct-tab-btn" onclick="acctSwitchTab('dsacct','signup')">Sign Up</button>
-          </div>
-          <div id="dsacct-signin-form">
-            <div class="acct-input-wrap"><span class="ms acct-input-icon">call</span><input type="tel" id="dsacct-signin-phone" class="acct-input" placeholder="Phone number"></div>
-            <div class="acct-input-wrap"><span class="ms acct-input-icon">lock</span><input type="password" id="dsacct-signin-password" class="acct-input pw" placeholder="Password"><span class="ms acct-input-eye" onclick="acctTogglePw('dsacct-signin-password',this)">visibility</span></div>
-            <div class="field-err" id="dsacct-signin-err">Incorrect phone number or password.</div>
-            <button class="acct-submit-btn" id="dsacct-signin-btn" onclick="acctSignIn('dsacct')"><span class="ms msfill" style="font-size:16px;">login</span>Sign In</button>
+
+          <div class="acct-scr" id="dsacct-scr-login">
+            <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('dsacct','landing')">arrow_back</span></div>
+            <div class="acct-big-title">Welcome back</div>
+            <div class="acct-big-sub">Sign in to order your lunch</div>
+            <div class="acct-field-label2">PHONE NUMBER</div>
+            <div class="acct-field-box"><span class="ms">phone_iphone</span><input type="tel" id="dsacct-login-phone" placeholder="0714 243 150"></div>
+            <div class="acct-field-label2">PASSWORD</div>
+            <div class="acct-field-box"><span class="ms">lock</span><input type="password" id="dsacct-login-password" placeholder="Your password"><span class="ms acct-eye" onclick="acctTogglePw('dsacct-login-password',this)">visibility</span></div>
             <div class="acct-forgot" onclick="acctForgotPassword()">Forgot password?</div>
+            <div class="acct-err-box" id="dsacct-login-err">Incorrect phone number or password.</div>
+            <button class="acct-submit-btn" id="dsacct-login-btn" onclick="acctLogin('dsacct')"><span class="ms msfill" style="font-size:16px;">login</span>Sign in</button>
+            <div class="acct-newhere">New here? <span class="link" onclick="acctGoScreen('dsacct','signup-1')">Create account</span></div>
+            <div class="acct-divider"><div class="ln"></div><span class="or">or</span><div class="ln"></div></div>
+            <div class="acct-browse" onclick="dsGoTab('today')">Browse without signing in <span class="ms" style="font-size:15px;vertical-align:-3px;">arrow_forward</span></div>
           </div>
-          <div id="dsacct-signup-form" style="display:none;">
-            <div class="acct-input-wrap"><span class="ms acct-input-icon">person</span><input type="text" id="dsacct-signup-name" class="acct-input" placeholder="Full name"></div>
-            <div class="acct-input-wrap"><span class="ms acct-input-icon">call</span><input type="tel" id="dsacct-signup-phone" class="acct-input" placeholder="Phone number"></div>
-            <div class="acct-input-wrap"><span class="ms acct-input-icon">lock</span><input type="password" id="dsacct-signup-password" class="acct-input pw" placeholder="Password (min. 6 characters)"><span class="ms acct-input-eye" onclick="acctTogglePw('dsacct-signup-password',this)">visibility</span></div>
-            <div class="acct-input-wrap"><span class="ms acct-input-icon">lock</span><input type="password" id="dsacct-signup-confirm" class="acct-input pw" placeholder="Confirm password"><span class="ms acct-input-eye" onclick="acctTogglePw('dsacct-signup-confirm',this)">visibility</span></div>
-            <div class="field-err" id="dsacct-signup-err">Please check the fields above.</div>
-            <button class="acct-submit-btn" id="dsacct-signup-btn" onclick="acctSignUp('dsacct')"><span class="ms msfill" style="font-size:16px;">how_to_reg</span>Create Account</button>
+
+          <div class="acct-scr" id="dsacct-scr-signup-1">
+            <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('dsacct','landing')">arrow_back</span><span class="acct-scr-title">Create account</span></div>
+            <div class="acct-progress"><div class="acct-progress-seg done"></div><div class="acct-progress-seg"></div><div class="acct-progress-seg"></div></div>
+            <div class="acct-step-label">Step 1 of 3</div>
+            <div class="acct-big-title">Tell us about you</div>
+            <div class="acct-big-sub">We'll use this to confirm your orders on WhatsApp.</div>
+            <div class="acct-field-label2">FULL NAME</div>
+            <div class="acct-field-box"><input type="text" id="dsacct-signup-name" placeholder="e.g. Wanjiru Kamau"></div>
+            <div class="acct-field-label2">PHONE NUMBER</div>
+            <div class="acct-field-box"><span style="font-size:14px;color:#5C5C5C;">+254</span><input type="tel" id="dsacct-signup-phone" placeholder="714 243 150"></div>
+            <div class="acct-field-hint"><span class="ms">info</span><span class="txt">This is also your M-Pesa number for payments &amp; confirmations.</span></div>
+            <div class="acct-err-box" id="dsacct-signup-1-err">Please fill in both fields.</div>
+            <button class="acct-submit-btn" onclick="acctSignupStep1('dsacct')">Continue</button>
           </div>
+
+          <div class="acct-scr" id="dsacct-scr-signup-2">
+            <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('dsacct','signup-1')">arrow_back</span><span class="acct-scr-title">Create account</span></div>
+            <div class="acct-progress"><div class="acct-progress-seg done"></div><div class="acct-progress-seg done"></div><div class="acct-progress-seg"></div></div>
+            <div class="acct-step-label">Step 2 of 3</div>
+            <div class="acct-big-title">Create a password</div>
+            <div class="acct-big-sub">You'll use it to sign in and confirm payments.</div>
+            <div class="acct-field-label2">PASSWORD</div>
+            <div class="acct-field-box"><span class="ms">lock</span><input type="password" id="dsacct-signup-password" placeholder="At least 6 characters"><span class="ms acct-eye" onclick="acctTogglePw('dsacct-signup-password',this)">visibility</span></div>
+            <div class="acct-field-label2">CONFIRM PASSWORD</div>
+            <div class="acct-field-box"><span class="ms">lock</span><input type="password" id="dsacct-signup-confirm" placeholder="Re-enter password"><span class="ms acct-eye" onclick="acctTogglePw('dsacct-signup-confirm',this)">visibility</span></div>
+            <div class="acct-err-box" id="dsacct-signup-2-err">Passwords must match and be at least 6 characters.</div>
+            <button class="acct-submit-btn" onclick="acctSignupStep2('dsacct')">Continue</button>
+          </div>
+
+          <div class="acct-scr" id="dsacct-scr-signup-3">
+            <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('dsacct','signup-2')">arrow_back</span><span class="acct-scr-title">Create account</span></div>
+            <div class="acct-progress"><div class="acct-progress-seg done"></div><div class="acct-progress-seg done"></div><div class="acct-progress-seg done"></div></div>
+            <div class="acct-step-label">Step 3 of 3</div>
+            <div class="acct-big-title">Where do we deliver?</div>
+            <div class="acct-big-sub">We deliver within Nairobi CBD only.</div>
+            <div class="acct-field-label2">BUILDING / OFFICE</div>
+            <div class="acct-field-box"><span class="ms">location_on</span><input type="text" id="dsacct-signup-building" placeholder="e.g. Kalamu House, 4th Floor"></div>
+            <div class="acct-field-label2">STREET / LANDMARK</div>
+            <div class="acct-field-box"><input type="text" id="dsacct-signup-street" placeholder="e.g. Banda Street, near GPO"></div>
+            <div class="acct-field-label2">M-PESA PAYMENT NUMBER</div>
+            <div class="acct-field-box" style="background:#F7F7F7;"><span class="ms" style="color:#A8A8A8;">payments</span><span id="dsacct-signup-mpesa-label" style="font-size:14px;color:#5C5C5C;flex:1;">Same as your phone number</span><span class="ms msfill" style="font-size:18px;color:var(--green);">check_circle</span></div>
+            <div class="acct-err-box" id="dsacct-signup-3-err">Please fill in both fields.</div>
+            <button class="acct-submit-btn" id="dsacct-signup-finish-btn" onclick="acctSignupFinish('dsacct')">Create account</button>
+          </div>
+
         </div>
         <div class="acct-signedin-block" style="display:none;">
           <div class="acct-avatar-circle acct-profile-initials">—</div>
@@ -698,30 +765,81 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
   <div class="account-bg scr">
     <div class="acct-card">
       <div class="acct-signedout-block">
-        <div class="acct-header">
-          <span class="ms msfill acct-header-icon">account_circle</span>
-          <div class="acct-header-title" id="acct-header-title">Welcome back</div>
-          <div class="acct-header-sub" id="acct-header-sub">Sign in to manage your subscription, referrals and orders.</div>
+
+        <!-- LANDING: choice between Login and Create Account -->
+        <div class="acct-scr active" id="acct-scr-landing">
+          <div style="text-align:center;"><span class="ms msfill acct-landing-icon">account_circle</span></div>
+          <div class="acct-landing-title">Your account</div>
+          <div class="acct-landing-sub">Sign in to order your lunch, or create an account to get started.</div>
+          <button class="acct-landing-btn primary" onclick="acctGoScreen('acct','login')">Login</button>
+          <button class="acct-landing-btn secondary" onclick="acctGoScreen('acct','signup-1')">Create Account</button>
         </div>
-        <div class="acct-tabs">
-          <button id="acct-tab-signin" class="acct-tab-btn active" onclick="acctSwitchTab('acct','signin')">Sign In</button>
-          <button id="acct-tab-signup" class="acct-tab-btn" onclick="acctSwitchTab('acct','signup')">Sign Up</button>
-        </div>
-        <div id="acct-signin-form">
-          <div class="acct-input-wrap"><span class="ms acct-input-icon">call</span><input type="tel" id="acct-signin-phone" class="acct-input" placeholder="Phone number"></div>
-          <div class="acct-input-wrap"><span class="ms acct-input-icon">lock</span><input type="password" id="acct-signin-password" class="acct-input pw" placeholder="Password"><span class="ms acct-input-eye" onclick="acctTogglePw('acct-signin-password',this)">visibility</span></div>
-          <div class="field-err" id="acct-signin-err">Incorrect phone number or password.</div>
-          <button class="acct-submit-btn" id="acct-signin-btn" onclick="acctSignIn('acct')"><span class="ms msfill" style="font-size:16px;">login</span>Sign In</button>
+
+        <!-- LOGIN (#scr-login) -->
+        <div class="acct-scr" id="acct-scr-login">
+          <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('acct','landing')">arrow_back</span></div>
+          <div class="acct-big-title">Welcome back</div>
+          <div class="acct-big-sub">Sign in to order your lunch</div>
+          <div class="acct-field-label2">PHONE NUMBER</div>
+          <div class="acct-field-box"><span class="ms">phone_iphone</span><input type="tel" id="acct-login-phone" placeholder="0714 243 150"></div>
+          <div class="acct-field-label2">PASSWORD</div>
+          <div class="acct-field-box"><span class="ms">lock</span><input type="password" id="acct-login-password" placeholder="Your password"><span class="ms acct-eye" onclick="acctTogglePw('acct-login-password',this)">visibility</span></div>
           <div class="acct-forgot" onclick="acctForgotPassword()">Forgot password?</div>
+          <div class="acct-err-box" id="acct-login-err">Incorrect phone number or password.</div>
+          <button class="acct-submit-btn" id="acct-login-btn" onclick="acctLogin('acct')"><span class="ms msfill" style="font-size:16px;">login</span>Sign in</button>
+          <div class="acct-newhere">New here? <span class="link" onclick="acctGoScreen('acct','signup-1')">Create account</span></div>
+          <div class="acct-divider"><div class="ln"></div><span class="or">or</span><div class="ln"></div></div>
+          <div class="acct-browse" onclick="goTab('today')">Browse without signing in <span class="ms" style="font-size:15px;vertical-align:-3px;">arrow_forward</span></div>
         </div>
-        <div id="acct-signup-form" style="display:none;">
-          <div class="acct-input-wrap"><span class="ms acct-input-icon">person</span><input type="text" id="acct-signup-name" class="acct-input" placeholder="Full name"></div>
-          <div class="acct-input-wrap"><span class="ms acct-input-icon">call</span><input type="tel" id="acct-signup-phone" class="acct-input" placeholder="Phone number"></div>
-          <div class="acct-input-wrap"><span class="ms acct-input-icon">lock</span><input type="password" id="acct-signup-password" class="acct-input pw" placeholder="Password (min. 6 characters)"><span class="ms acct-input-eye" onclick="acctTogglePw('acct-signup-password',this)">visibility</span></div>
-          <div class="acct-input-wrap"><span class="ms acct-input-icon">lock</span><input type="password" id="acct-signup-confirm" class="acct-input pw" placeholder="Confirm password"><span class="ms acct-input-eye" onclick="acctTogglePw('acct-signup-confirm',this)">visibility</span></div>
-          <div class="field-err" id="acct-signup-err">Please check the fields above.</div>
-          <button class="acct-submit-btn" id="acct-signup-btn" onclick="acctSignUp('acct')"><span class="ms msfill" style="font-size:16px;">how_to_reg</span>Create Account</button>
+
+        <!-- SIGNUP STEP 1 — details (#scr-signup-1) -->
+        <div class="acct-scr" id="acct-scr-signup-1">
+          <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('acct','landing')">arrow_back</span><span class="acct-scr-title">Create account</span></div>
+          <div class="acct-progress"><div class="acct-progress-seg done"></div><div class="acct-progress-seg"></div><div class="acct-progress-seg"></div></div>
+          <div class="acct-step-label">Step 1 of 3</div>
+          <div class="acct-big-title">Tell us about you</div>
+          <div class="acct-big-sub">We'll use this to confirm your orders on WhatsApp.</div>
+          <div class="acct-field-label2">FULL NAME</div>
+          <div class="acct-field-box"><input type="text" id="acct-signup-name" placeholder="e.g. Wanjiru Kamau"></div>
+          <div class="acct-field-label2">PHONE NUMBER</div>
+          <div class="acct-field-box"><span style="font-size:14px;color:#5C5C5C;">+254</span><input type="tel" id="acct-signup-phone" placeholder="714 243 150"></div>
+          <div class="acct-field-hint"><span class="ms">info</span><span class="txt">This is also your M-Pesa number for payments &amp; confirmations.</span></div>
+          <div class="acct-err-box" id="acct-signup-1-err">Please fill in both fields.</div>
+          <button class="acct-submit-btn" onclick="acctSignupStep1('acct')">Continue</button>
         </div>
+
+        <!-- SIGNUP STEP 2 — password (#scr-signup-2, PIN swapped for a real password) -->
+        <div class="acct-scr" id="acct-scr-signup-2">
+          <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('acct','signup-1')">arrow_back</span><span class="acct-scr-title">Create account</span></div>
+          <div class="acct-progress"><div class="acct-progress-seg done"></div><div class="acct-progress-seg done"></div><div class="acct-progress-seg"></div></div>
+          <div class="acct-step-label">Step 2 of 3</div>
+          <div class="acct-big-title">Create a password</div>
+          <div class="acct-big-sub">You'll use it to sign in and confirm payments.</div>
+          <div class="acct-field-label2">PASSWORD</div>
+          <div class="acct-field-box"><span class="ms">lock</span><input type="password" id="acct-signup-password" placeholder="At least 6 characters"><span class="ms acct-eye" onclick="acctTogglePw('acct-signup-password',this)">visibility</span></div>
+          <div class="acct-field-label2">CONFIRM PASSWORD</div>
+          <div class="acct-field-box"><span class="ms">lock</span><input type="password" id="acct-signup-confirm" placeholder="Re-enter password"><span class="ms acct-eye" onclick="acctTogglePw('acct-signup-confirm',this)">visibility</span></div>
+          <div class="acct-err-box" id="acct-signup-2-err">Passwords must match and be at least 6 characters.</div>
+          <button class="acct-submit-btn" onclick="acctSignupStep2('acct')">Continue</button>
+        </div>
+
+        <!-- SIGNUP STEP 3 — delivery (#scr-signup-3) -->
+        <div class="acct-scr" id="acct-scr-signup-3">
+          <div class="acct-scr-header"><span class="ms" onclick="acctGoScreen('acct','signup-2')">arrow_back</span><span class="acct-scr-title">Create account</span></div>
+          <div class="acct-progress"><div class="acct-progress-seg done"></div><div class="acct-progress-seg done"></div><div class="acct-progress-seg done"></div></div>
+          <div class="acct-step-label">Step 3 of 3</div>
+          <div class="acct-big-title">Where do we deliver?</div>
+          <div class="acct-big-sub">We deliver within Nairobi CBD only.</div>
+          <div class="acct-field-label2">BUILDING / OFFICE</div>
+          <div class="acct-field-box"><span class="ms">location_on</span><input type="text" id="acct-signup-building" placeholder="e.g. Kalamu House, 4th Floor"></div>
+          <div class="acct-field-label2">STREET / LANDMARK</div>
+          <div class="acct-field-box"><input type="text" id="acct-signup-street" placeholder="e.g. Banda Street, near GPO"></div>
+          <div class="acct-field-label2">M-PESA PAYMENT NUMBER</div>
+          <div class="acct-field-box" style="background:#F7F7F7;"><span class="ms" style="color:#A8A8A8;">payments</span><span id="acct-signup-mpesa-label" style="font-size:14px;color:#5C5C5C;flex:1;">Same as your phone number</span><span class="ms msfill" style="font-size:18px;color:var(--green);">check_circle</span></div>
+          <div class="acct-err-box" id="acct-signup-3-err">Please fill in both fields.</div>
+          <button class="acct-submit-btn" id="acct-signup-finish-btn" onclick="acctSignupFinish('acct')">Create account</button>
+        </div>
+
       </div>
       <div class="acct-signedin-block" style="display:none;">
         <div class="acct-avatar-circle acct-profile-initials">—</div>
@@ -957,16 +1075,10 @@ function acctNormalizePhone(phone){
 }
 function acctPhoneToEmail(phone){return acctNormalizePhone(phone)+'@nairobidishes.app';}
 
-function acctSwitchTab(scope,tab){
-  document.getElementById(`${scope}-tab-signin`).classList.toggle('active',tab==='signin');
-  document.getElementById(`${scope}-tab-signup`).classList.toggle('active',tab==='signup');
-  document.getElementById(`${scope}-signin-form`).style.display=tab==='signin'?'block':'none';
-  document.getElementById(`${scope}-signup-form`).style.display=tab==='signup'?'block':'none';
-  document.getElementById(`${scope}-signin-err`).style.display='none';
-  document.getElementById(`${scope}-signup-err`).style.display='none';
-  const title=document.getElementById(`${scope}-header-title`),sub=document.getElementById(`${scope}-header-sub`);
-  if(tab==='signin'){title.textContent='Welcome back';sub.textContent='Sign in to manage your subscription, referrals and orders.';}
-  else{title.textContent='Create your account';sub.textContent='Takes less than a minute — track orders, subscriptions and referrals.';}
+function acctGoScreen(scope,screen){
+  document.querySelectorAll(`#scr-account .acct-scr, #dssec-account .acct-scr`).forEach(el=>{
+    if(el.id.startsWith(scope+'-scr-'))el.classList.toggle('active',el.id===`${scope}-scr-${screen}`);
+  });
 }
 
 function acctTogglePw(inputId,iconEl){
@@ -981,44 +1093,70 @@ function acctForgotPassword(){
   window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-function acctSignIn(scope){
-  const phone=document.getElementById(`${scope}-signin-phone`).value.trim();
-  const pass=document.getElementById(`${scope}-signin-password`).value;
-  const err=document.getElementById(`${scope}-signin-err`);
-  const btn=document.getElementById(`${scope}-signin-btn`);
+function acctLogin(scope){
+  const phone=document.getElementById(`${scope}-login-phone`).value.trim();
+  const pass=document.getElementById(`${scope}-login-password`).value;
+  const err=document.getElementById(`${scope}-login-err`);
+  const btn=document.getElementById(`${scope}-login-btn`);
   err.style.display='none';
   if(!phone||!pass){err.textContent='Enter your phone number and password.';err.style.display='block';return;}
   btn.disabled=true;btn.textContent='Signing in…';
   fbAuth.signInWithEmailAndPassword(acctPhoneToEmail(phone),pass)
     .catch(()=>{err.textContent='Incorrect phone number or password.';err.style.display='block';})
-    .finally(()=>{btn.disabled=false;btn.innerHTML='<span class="ms msfill" style="font-size:16px;">login</span>Sign In';});
+    .finally(()=>{btn.disabled=false;btn.innerHTML='<span class="ms msfill" style="font-size:16px;">login</span>Sign in';});
 }
 
-function acctSignUp(scope){
+/* signup wizard: holds step 1/2 data in memory per scope until the final
+   step actually creates the Firebase account */
+const acctSignupDraft={};
+
+function acctSignupStep1(scope){
   const name=document.getElementById(`${scope}-signup-name`).value.trim();
   const phone=document.getElementById(`${scope}-signup-phone`).value.trim();
+  const err=document.getElementById(`${scope}-signup-1-err`);
+  if(!name||!phone){err.style.display='block';return;}
+  err.style.display='none';
+  acctSignupDraft[scope]={...(acctSignupDraft[scope]||{}),fullName:name,phone};
+  const mpesaLabel=document.getElementById(`${scope}-signup-mpesa-label`);
+  if(mpesaLabel)mpesaLabel.textContent='Same as '+phone;
+  acctGoScreen(scope,'signup-2');
+}
+
+function acctSignupStep2(scope){
   const pass=document.getElementById(`${scope}-signup-password`).value;
   const confirm=document.getElementById(`${scope}-signup-confirm`).value;
-  const err=document.getElementById(`${scope}-signup-err`);
-  const btn=document.getElementById(`${scope}-signup-btn`);
+  const err=document.getElementById(`${scope}-signup-2-err`);
+  if(!pass||pass.length<6||pass!==confirm){err.style.display='block';return;}
   err.style.display='none';
-  if(!name||!phone||!pass){err.textContent='Please fill in all fields.';err.style.display='block';return;}
-  if(pass.length<6){err.textContent='Password must be at least 6 characters.';err.style.display='block';return;}
-  if(pass!==confirm){err.textContent="Passwords don't match.";err.style.display='block';return;}
+  acctSignupDraft[scope]={...(acctSignupDraft[scope]||{}),password:pass};
+  acctGoScreen(scope,'signup-3');
+}
+
+function acctSignupFinish(scope){
+  const building=document.getElementById(`${scope}-signup-building`).value.trim();
+  const street=document.getElementById(`${scope}-signup-street`).value.trim();
+  const err=document.getElementById(`${scope}-signup-3-err`);
+  const btn=document.getElementById(`${scope}-signup-finish-btn`);
+  if(!building||!street){err.style.display='block';return;}
+  err.style.display='none';
+  const draft=acctSignupDraft[scope]||{};
   btn.disabled=true;btn.textContent='Creating account…';
-  fbAuth.createUserWithEmailAndPassword(acctPhoneToEmail(phone),pass)
+  fbAuth.createUserWithEmailAndPassword(acctPhoneToEmail(draft.phone),draft.password)
     .then(cred=>fbDb.collection('users').doc(cred.user.uid).set({
-      fullName:name,
-      phone:acctNormalizePhone(phone),
+      fullName:draft.fullName,
+      phone:acctNormalizePhone(draft.phone),
+      mpesaNumber:acctNormalizePhone(draft.phone),
+      delivery:{building,street},
       createdAt:firebase.firestore.FieldValue.serverTimestamp()
     }))
+    .then(()=>{delete acctSignupDraft[scope];})
     .catch(e=>{
       err.textContent=e.code==='auth/email-already-in-use'
         ?'An account with that phone number already exists — try signing in instead.'
         :'Something went wrong creating your account. Please try again.';
       err.style.display='block';
     })
-    .finally(()=>{btn.disabled=false;btn.innerHTML='<span class="ms msfill" style="font-size:16px;">how_to_reg</span>Create Account';});
+    .finally(()=>{btn.disabled=false;btn.innerHTML='Create account';});
 }
 
 function acctSignOut(){fbAuth.signOut();}
@@ -1048,8 +1186,12 @@ fbAuth.onAuthStateChanged(user=>{
     outBlocks.forEach(el=>el.style.display='block');
     inBlocks.forEach(el=>el.style.display='none');
     acctProfile=null;
+    // reset both scopes back to the landing choice screen on sign-out
+    acctGoScreen('acct','landing');
+    acctGoScreen('dsacct','landing');
   }
 });
+
 
 
 /* ══ DATA ══ */
