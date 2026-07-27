@@ -2389,8 +2389,8 @@ function checkSessionTimeout(){
 function dismissTimeoutForSignIn(){
   document.getElementById('timeout-overlay').style.display='none';
   lastActivityAt=Date.now();
-  goTab('account');
-  acctGoScreen('acct','login');
+  goTab('account');acctGoScreen('acct','login');
+  dsGoTab('account');acctGoScreen('dsacct','login');
 }
 
 /* ══ PWA ══ */
