@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Nairobi Dishes | Affordable Packed Meals Delivered in Nairobi CBD</title>
-<meta name="description" content="Order affordable, healthy, microwavable packed meals delivered within Nairobi CBD. Meals from KES 100. Order by 11:30 PM Mon–Fri.">
+<meta name="description" content="Order affordable, healthy, microwavable packed meals delivered within Nairobi CBD. Meals from KES 100. Order by 2:30 PM Mon–Fri.">
 <meta name="theme-color" content="#FFC244">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -406,8 +406,8 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     </div>
     <div class="ds-card">
       <div class="ds-card-title">INFO</div>
-      <div class="ds-info-row"><span>Order by</span><strong>11:30 AM</strong></div>
-      <div class="ds-info-row"><span>Delivery from</span><strong>11:30 AM</strong></div>
+      <div class="ds-info-row"><span>Order by</span><strong>2:30 PM</strong></div>
+      <div class="ds-info-row"><span>Delivery from</span><strong>12:30 PM</strong></div>
       <div class="ds-info-row"><span>Days</span><strong>Mon – Fri</strong></div>
       <div class="ds-info-row"><span>Area</span><strong>Nairobi CBD</strong></div>
       <div class="ds-info-row"><span>Payment</span><strong>M-Pesa</strong></div>
@@ -433,8 +433,8 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       <div class="ds-banner" id="ds-banner">
         <span class="ms msfill" style="font-size:22px;color:#9A6E12;">schedule</span>
         <div>
-          <div style="font:700 13px Poppins,sans-serif;color:#9A6E12;" id="ds-banner-title">Ordering closes at 11:30 AM</div>
-          <div style="font-size:12px;color:var(--mid);margin-top:2px;" id="ds-banner-text">Place your order before 11:30 AM to get lunch delivered from 12:30 PM.</div>
+          <div style="font:700 13px Poppins,sans-serif;color:#9A6E12;" id="ds-banner-title">Ordering closes at 2:30 PM</div>
+          <div style="font-size:12px;color:var(--mid);margin-top:2px;" id="ds-banner-text">Place your order before 2:30 PM to get lunch delivered from 12:30 PM.</div>
         </div>
       </div>
       <div id="ds-banner-cta" style="display:none;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:16px;">
@@ -459,7 +459,11 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
           <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Beef Pilau" onerror="this.style.display='none'">
         </div>
         <div style="padding:14px 18px;display:flex;align-items:center;gap:12px;">
-          <div style="flex:1;"><div style="font:700 16px Poppins,sans-serif;">Beef Pilau</div><div style="font-size:11px;color:var(--muted);margin-top:2px;">Ordered by 28% of customers</div></div>
+          <div style="flex:1;">
+            <div style="font:700 16px Poppins,sans-serif;">Beef Pilau</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Ordered by 28% of customers</div>
+            <div style="margin-top:5px;" id="ds-hero-review-badge"><span onclick="openReviewModal('Beef Pilau')" style="font-size:10.5px;color:var(--green);font-weight:700;cursor:pointer;">Rate this dish</span></div>
+          </div>
           <div style="font:700 28px Poppins,sans-serif;color:var(--green);">28%</div>
         </div>
       </div>
@@ -473,7 +477,7 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     <!-- WEEKLY -->
     <div class="ds-main-section" id="dssec-weekly">
       <div class="ds-section-title">Weekly Plan</div>
-      <div class="ds-section-sub">All meals KES 150 · Packed &amp; Microwavable · Swap any meal before 10:00 AM on that day</div>
+      <div class="ds-section-sub">Meals from KES 100 · Packed &amp; Microwavable · Swap any meal before 10:00 AM on that day</div>
       <div class="ds-weekly-table">
         <div class="ds-weekly-table-head">
           <span>DAY</span><span>DISHES AVAILABLE</span><span>STATUS</span>
@@ -517,6 +521,13 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
             <div class="acct-landing-sub">Sign in to order your lunch, or create an account to get started.</div>
             <button class="acct-landing-btn primary" onclick="acctGoScreen('dsacct','login')">Login</button>
             <button class="acct-landing-btn secondary" onclick="acctGoScreen('dsacct','signup-1')">Create Account</button>
+            <div style="margin-top:16px;background:var(--dark);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;">
+              <span class="ms msfill" style="font-size:26px;color:var(--yellow);">redeem</span>
+              <div style="flex:1;">
+                <div style="font:700 12.5px Poppins,sans-serif;color:#fff;">Earn 10% cash for every referral</div>
+                <div style="font-size:10.5px;color:#BDBDBD;margin-top:2px;line-height:1.4;">Real M-Pesa payouts, not points. Create an account to get your referral link.</div>
+              </div>
+            </div>
           </div>
 
           <div class="acct-scr" id="dsacct-scr-login">
@@ -648,12 +659,29 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       </div>
       <div id="ds-order-items" style="display:none;">
         <div id="ds-order-list" style="background:var(--light);border-radius:12px;padding:12px 14px;margin-bottom:8px;"></div>
-        <div style="text-align:right;font:700 15px Poppins,sans-serif;color:var(--dark);margin-bottom:12px;">Total: KES <span id="ds-order-total">0</span></div>
+        <div class="field-err" id="ds-discount-banner" style="display:none;color:var(--green-dark);background:var(--green-tint);border-radius:10px;padding:9px 12px;margin-bottom:8px;">🎉 First order discount — 30% off applied!</div>
         <div class="field-group" style="margin-bottom:12px;">
           <label class="field-label">Delivery location <span class="field-req">*</span></label>
           <input type="text" id="ds-delivery-loc" class="field-input" placeholder="e.g. Anniversary Towers, Moi Ave">
           <div class="field-err" id="ds-loc-err">Please enter your delivery location.</div>
         </div>
+        <div id="ds-payment-method-block" style="display:none;margin-bottom:12px;">
+          <label class="field-label" style="display:block;margin-bottom:8px;">PAYMENT METHOD</label>
+          <div style="display:flex;gap:9px;">
+            <div id="ds-pm-wallet" onclick="setDsPaymentMethod('wallet')" style="flex:1;border:1.5px solid var(--green);border-radius:12px;padding:11px 12px;display:flex;align-items:center;gap:8px;background:#F3FBF9;cursor:pointer;">
+              <span class="ms msfill" style="font-size:18px;color:var(--green);">account_balance_wallet</span>
+              <div><div style="font:700 12px Poppins,sans-serif;">Wallet</div><div style="font-size:9.5px;color:var(--green-dark);">Bal <span class="acct-wallet-balance">KES 0</span></div></div>
+            </div>
+            <div id="ds-pm-mpesa" onclick="setDsPaymentMethod('mpesa')" style="flex:1;border:1.5px solid var(--border);border-radius:12px;padding:11px 12px;display:flex;align-items:center;gap:8px;background:#fff;cursor:pointer;">
+              <span class="ms msfill" style="font-size:18px;color:var(--muted);">payments</span>
+              <div><div style="font:700 12px Poppins,sans-serif;">M-Pesa</div><div style="font-size:9.5px;color:var(--muted);">Pay manually</div></div>
+            </div>
+          </div>
+          <div class="field-hint" id="ds-mpesa-note" style="display:none;margin-top:8px;">You'll confirm payment to <strong>0790373027 (Silvia)</strong> on WhatsApp after placing this order.</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 0 3px;" id="ds-subtotal-row"><span>Subtotal</span><span>KES <span id="ds-order-subtotal">0</span></span></div>
+        <div style="display:none;justify-content:space-between;font-size:12px;color:var(--green-dark);padding:0 0 3px;" id="ds-discount-row"><span>First order discount (30%)</span><span>−KES <span id="ds-order-discount">0</span></span></div>
+        <div style="text-align:right;font:700 15px Poppins,sans-serif;color:var(--dark);margin-bottom:12px;">Total: KES <span id="ds-order-total">0</span></div>
         <button onclick="dsHandleOrderSmart()" class="wa-order-btn" id="ds-order-btn" style="margin:0 0 6px;">
           <span style="font-size:18px;">📲</span>Order via WhatsApp
         </button>
@@ -703,8 +731,8 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     <div class="banner" id="banner">
       <span class="ms msfill" id="banner-icon" style="font-size:20px;color:#9A6E12;flex:0 0 auto;">schedule</span>
       <div>
-        <div class="banner-title" id="banner-title" style="color:#9A6E12;">Ordering closes at 11:30 AM</div>
-        <div class="banner-text" id="banner-text">Place your order before 11:30 AM to get lunch delivered from 12:30 PM.</div>
+        <div class="banner-title" id="banner-title" style="color:#9A6E12;">Ordering closes at 2:30 PM</div>
+        <div class="banner-text" id="banner-text">Place your order before 2:30 PM to get lunch delivered from 12:30 PM.</div>
       </div>
     </div>
     <div id="banner-cta" style="display:none;margin:8px 16px 0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px;">
@@ -722,7 +750,7 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
         <div class="closed-state">
           <div style="font-size:2.5rem;margin-bottom:12px;">🍱</div>
           <div style="font:700 18px Poppins,sans-serif;margin-bottom:6px;">Orders closed for today</div>
-          <div style="font-size:12px;color:var(--mid);line-height:1.6;margin-bottom:20px;" id="closed-sub-text">We stopped taking orders at 11:30 AM. Come back tomorrow before 11:30 AM.</div>
+          <div style="font-size:12px;color:var(--mid);line-height:1.6;margin-bottom:20px;" id="closed-sub-text">We stopped taking orders at 2:30 PM. Come back tomorrow before 2:30 PM.</div>
           <a href="https://wa.me/254714243150" class="wa-btn-green"><span class="ms msfill" style="font-size:18px;">chat</span>Chat on WhatsApp</a>
         </div>
       </div>
@@ -758,7 +786,7 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     <div id="weekly-view" style="display:none;">
       <div class="weekly-card">
         <div class="weekly-card-head">
-          <div><div class="weekly-card-title">This week's menu</div><div class="weekly-card-sub">All meals KES 150 · Packed &amp; Microwavable</div></div>
+          <div><div class="weekly-card-title">This week's menu</div><div class="weekly-card-sub">Meals from KES 100 · Packed &amp; Microwavable</div></div>
         </div>
         <div id="weekly-rows"></div>
       </div>
@@ -808,7 +836,11 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     <div class="hero-rank-card">
       <div class="hero-rank-img"><span class="rank1-pill">#1 MOST LOVED</span><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80" alt="Beef Pilau" onerror="this.style.display='none'"></div>
       <div style="padding:10px 13px;display:flex;align-items:center;gap:10px;">
-        <div style="flex:1;"><div style="font:700 14px Poppins,sans-serif;">Beef Pilau</div><div style="font-size:10px;color:var(--muted);margin-top:1px;">Ordered by 28% of customers</div></div>
+        <div style="flex:1;">
+          <div style="font:700 14px Poppins,sans-serif;">Beef Pilau</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:1px;">Ordered by 28% of customers</div>
+          <div style="margin-top:4px;" id="hero-review-badge"><span onclick="openReviewModal('Beef Pilau')" style="font-size:10px;color:var(--green);font-weight:700;cursor:pointer;">Rate this dish</span></div>
+        </div>
         <div style="font:700 24px Poppins,sans-serif;color:var(--green);">28%</div>
       </div>
     </div>
@@ -831,6 +863,13 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
           <div class="acct-landing-sub">Sign in to order your lunch, or create an account to get started.</div>
           <button class="acct-landing-btn primary" onclick="acctGoScreen('acct','login')">Login</button>
           <button class="acct-landing-btn secondary" onclick="acctGoScreen('acct','signup-1')">Create Account</button>
+          <div style="margin-top:16px;background:var(--dark);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;">
+            <span class="ms msfill" style="font-size:26px;color:var(--yellow);">redeem</span>
+            <div style="flex:1;">
+              <div style="font:700 12.5px Poppins,sans-serif;color:#fff;">Earn 10% cash for every referral</div>
+              <div style="font-size:10.5px;color:#BDBDBD;margin-top:2px;line-height:1.4;">Real M-Pesa payouts, not points. Create an account to get your referral link.</div>
+            </div>
+          </div>
         </div>
 
         <!-- LOGIN (#scr-login) -->
@@ -929,7 +968,7 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       <div class="list-row" onclick="openGiftModal()"><span class="ms" style="font-size:18px;color:var(--green);">card_giftcard</span><div style="flex:1;"><div style="font:600 12px Poppins,sans-serif;">Gift a meal</div><div style="font-size:10px;color:#9A9A9A;margin-top:1px;">Order for a colleague</div></div><span class="ms list-chevron">chevron_right</span></div>
     </div>
     <div class="list-group">
-      <div class="list-row" onclick="setView('weekly');goTab('today')"><span class="ms" style="font-size:18px;color:var(--yellow);">star</span><div style="flex:1;"><div style="font:600 12px Poppins,sans-serif;">Weekly Plan — KES 750/week</div><div style="font-size:10px;color:#9A9A9A;margin-top:1px;">5 meals, Mon–Fri</div></div><span class="ms list-chevron">chevron_right</span></div>
+      <div class="list-row" onclick="setView('weekly');goTab('today')"><span class="ms" style="font-size:18px;color:var(--yellow);">star</span><div style="flex:1;"><div style="font:600 12px Poppins,sans-serif;">Weekly Plan — KES 750/week</div><div style="font-size:10px;color:#9A9A9A;margin-top:1px;">5 meals, Mon–Fri · 🍎 Free fruit every week</div></div><span class="ms list-chevron">chevron_right</span></div>
       <div class="list-row" onclick="subscribeViaWA('monthly')"><span class="ms" style="font-size:18px;color:var(--green);">workspace_premium</span><div style="flex:1;"><div style="font:600 12px Poppins,sans-serif;">Monthly Plan — KES 3,000/month</div><div style="font-size:10px;color:#9A9A9A;margin-top:1px;">20 meals · KES 150/meal · Best value</div></div><span class="ms list-chevron">chevron_right</span></div>
     </div>
     <div class="list-group">
@@ -1131,6 +1170,7 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
     <div class="modal-handle"></div>
     <div class="modal-title">Confirm Order</div>
     <div class="order-list-box" id="wallet-order-items-list"></div>
+    <div class="field-err" id="wallet-discount-banner" style="display:none;color:var(--green-dark);background:var(--green-tint);border-radius:10px;padding:9px 12px;margin-top:6px;">🎉 First order discount — 30% off applied!</div>
     <div class="cbd-note"><span>📍</span><span>We deliver within <strong>Nairobi CBD only</strong>.</span></div>
     <div class="field-group">
       <label class="field-label">Delivery location <span class="field-req">*</span></label>
@@ -1138,13 +1178,22 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       <div class="field-hint">Building or landmark within Nairobi CBD.</div>
       <div class="field-err" id="wallet-location-error">Please enter your delivery location.</div>
     </div>
-    <div style="border:1.5px solid var(--green);border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:11px;background:#F3FBF9;margin-top:4px;">
-      <span class="ms msfill" style="font-size:22px;color:var(--green);">account_balance_wallet</span>
-      <div style="flex:1;"><div style="font:700 13px Poppins,sans-serif;color:var(--dark);">Wallet</div><div style="font-size:11px;color:var(--green-dark);">Balance <span class="acct-wallet-balance">KES 0</span></div></div>
-      <span class="ms msfill" style="font-size:21px;color:var(--green);">radio_button_checked</span>
+    <label class="field-label" style="display:block;margin-bottom:8px;">PAYMENT METHOD</label>
+    <div style="display:flex;gap:9px;margin-bottom:4px;">
+      <div id="wallet-pm-wallet" onclick="setWalletPaymentMethod('wallet')" style="flex:1;border:1.5px solid var(--green);border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:9px;background:#F3FBF9;cursor:pointer;">
+        <span class="ms msfill" style="font-size:20px;color:var(--green);">account_balance_wallet</span>
+        <div style="flex:1;"><div style="font:700 12.5px Poppins,sans-serif;color:var(--dark);">Wallet</div><div style="font-size:10px;color:var(--green-dark);">Bal <span class="acct-wallet-balance">KES 0</span></div></div>
+      </div>
+      <div id="wallet-pm-mpesa" onclick="setWalletPaymentMethod('mpesa')" style="flex:1;border:1.5px solid var(--border);border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:9px;background:#fff;cursor:pointer;">
+        <span class="ms msfill" style="font-size:20px;color:var(--muted);">payments</span>
+        <div style="flex:1;"><div style="font:700 12.5px Poppins,sans-serif;color:var(--dark);">M-Pesa</div><div style="font-size:10px;color:var(--muted);">Pay manually</div></div>
+      </div>
     </div>
     <div class="field-err" id="wallet-insufficient-error" style="margin-top:8px;">Insufficient wallet balance — top up to continue.</div>
+    <div class="field-hint" id="wallet-mpesa-note" style="display:none;margin-top:8px;">You'll confirm payment to <strong>0790373027 (Silvia)</strong> on WhatsApp after placing this order.</div>
     <div style="height:1px;background:var(--border2);margin:12px 0;"></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);padding:0 0 4px;" id="wallet-subtotal-row"><span>Subtotal</span><span>KES <span id="wallet-summary-subtotal">0</span></span></div>
+    <div style="display:none;justify-content:space-between;font-size:12.5px;color:var(--green-dark);padding:0 0 4px;" id="wallet-discount-row"><span>First order discount (30%)</span><span>−KES <span id="wallet-summary-discount">0</span></span></div>
     <div style="display:flex;justify-content:space-between;font:700 15px Poppins,sans-serif;color:var(--dark);padding:0 0 12px;"><span>Total</span><span>KES <span id="wallet-summary-total">0</span></span></div>
     <button class="wa-order-btn" id="wallet-pay-btn" style="background:var(--green);" onclick="handleWalletOrder()"><span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet</button>
     <button class="clear-link" onclick="closeWalletCheckout()">Back to menu</button>
@@ -1216,6 +1265,29 @@ body{font-family:'Nunito Sans',sans-serif;background:#e8e8e8;color:var(--dark);-
       <button onclick="openTopUp()" style="border:none;border-radius:10px;background:var(--yellow);color:var(--dark);font:700 12px Poppins,sans-serif;padding:10px 14px;cursor:pointer;">Top up</button>
     </div>
     <div id="wallet-tx-list" style="max-height:50vh;overflow-y:auto;"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="review-modal" onclick="if(event.target===this)closeReviewModal()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="review-modal-dish-name">Dish name</div>
+    <div id="review-form-box" style="margin-bottom:16px;">
+      <div class="field-label" style="margin-bottom:6px;">FOOD</div>
+      <div id="review-food-stars" style="margin-bottom:12px;"></div>
+      <div class="field-label" style="margin-bottom:6px;">SERVICE &amp; DELIVERY</div>
+      <div id="review-service-stars" style="margin-bottom:12px;"></div>
+      <div class="field-group">
+        <label class="field-label">Comment (optional)</label>
+        <textarea id="review-comment" maxlength="150" rows="3" class="field-input" style="resize:none;" placeholder="What did you think? (max 150 characters)"></textarea>
+      </div>
+      <button class="wa-order-btn" style="background:var(--green);" onclick="submitReview()">Submit review</button>
+    </div>
+    <div id="review-gate-box" style="display:none;background:var(--yellow-tint);border-radius:12px;padding:12px 14px;font-size:12px;color:#7A5300;margin-bottom:16px;"></div>
+    <div style="height:1px;background:var(--border2);margin-bottom:10px;"></div>
+    <div class="field-label" style="margin-bottom:8px;">WHAT CUSTOMERS SAY</div>
+    <div id="review-list-box" style="max-height:35vh;overflow-y:auto;"></div>
+    <button class="clear-link" onclick="closeReviewModal()">Close</button>
   </div>
 </div>
 
@@ -1392,6 +1464,8 @@ fbAuth.onAuthStateChanged(user=>{
       syncWeeklyViews();
     });
     acctUpdateTodayForAuth();
+    refreshMyOrderedDishes();
+    loadAllReviews();
   }else{
     outBlocks.forEach(el=>el.style.display='block');
     inBlocks.forEach(el=>el.style.display='none');
@@ -1401,6 +1475,8 @@ fbAuth.onAuthStateChanged(user=>{
     acctGoScreen('dsacct','landing');
     acctUpdateTodayForAuth();
     syncWeeklyViews();
+    refreshMyOrderedDishes();
+    loadAllReviews();
   }
 });
 
@@ -1422,17 +1498,23 @@ const MENU=[
   {id:0,name:"Beef Pilau",          desc:"Fragrant spiced rice with tender beef",             price:150,featured:true, soldOut:false,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80"},
   {id:1,name:"Rice + Ndengu",       desc:"Ndengu slow-cooked — full portion",          price:150,featured:false,soldOut:false,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80"},
   {id:2,name:"Rice + Ndengu (S)",   desc:"Smaller portion, lighter lunch",                    price:100,featured:false,soldOut:false,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80"},
-  {id:3,name:"Chapo + Ndengu",        desc:"Chapati with Ndengu",                    price:120,featured:false,soldOut:false,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80"},
+  {id:3,name:"Chapo + Ndengu",        desc:"Chapati with Ndengu",                    price:120,featured:false,soldOut:true,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80"},
 ];
 
 /* Weekly menu — each day lists the available dishes by name */
 const WEEKLY_MENU=[
-  {day:"Mon",meals:["Beef Pilau","Rice + Kamande","Chapo + Minji","Mashed Potatoes & Veg","Mukimo"]},
-  {day:"Tue",meals:["Beef Pilau","Rice + Kamande","Chapo + Minji","Spaghetti & Meat","Githeri"]},
-  {day:"Wed",meals:["Beef Pilau","Rice + Kamande","Chapo + Minji","Mashed Potatoes & Veg","Mukimo"]},
-  {day:"Thu",meals:["Beef Pilau","Rice + Kamande","Chapo + Minji","Spaghetti & Meat","Githeri"]},
-  {day:"Fri",meals:["Beef Pilau","Rice + Kamande","Chapo + Minji","Mashed Potatoes & Veg","Mukimo"]},
+  {day:"Mon",meals:["Beef Pilau","Rice + Ndengu","Rice + Ndengu (S)","Chapo + Ndengu"]},
+  {day:"Tue",meals:["Beef Pilau","Rice + Ndengu","Rice + Ndengu (S)","Chapo + Ndengu"]},
+  {day:"Wed",meals:["Beef Pilau","Rice + Ndengu","Rice + Ndengu (S)","Chapo + Ndengu"]},
+  {day:"Thu",meals:["Beef Pilau","Rice + Ndengu","Rice + Ndengu (S)","Chapo + Ndengu"]},
+  {day:"Fri",meals:["Beef Pilau","Rice + Ndengu","Rice + Ndengu (S)","Chapo + Ndengu"]},
 ];
+
+/* looks up a meal's real price from MENU, since weekly meals are the same
+   dishes as the daily menu and should carry the same varying prices
+   (e.g. Rice + Ndengu (S) at KES 100, Chapo + Ndengu at KES 120) rather
+   than a flat KES 150 for everything. */
+function mealPrice(name){const d=MENU.find(m=>m.name===name);return d?d.price:150;}
 
 /* Stores user's selected weekly meals after WhatsApp confirmation */
 /* key = day index 0-4, value = meal name */
@@ -1441,9 +1523,8 @@ let weeklySelections={};
 let weeklyConfirmed={};
 
 const RANKING=[
-  {name:"Beef Pilau",pct:19},{name:"Chapo + Ndengu/Kamande",pct:15},
-  {name:"Rice + Kamande",pct:12},{name:"Mashed Potatoes & Veg",pct:9},
-  {name:"Githeri",pct:7},{name:"Mukimo",pct:6},{name:"Others",pct:4},
+  {name:"Rice + Ndengu",pct:32},{name:"Chapo + Ndengu",pct:24},
+  {name:"Rice + Ndengu (S)",pct:16},{name:"Others",pct:6},
 ];
 
 /* ══ STATE ══ */
@@ -1494,8 +1575,8 @@ function updateBanner(){
   const b=document.getElementById('banner'),ic=document.getElementById('banner-icon'),ti=document.getElementById('banner-title'),tx=document.getElementById('banner-text');
   const weekly=currentView==='weekly';
   const cta=document.getElementById('banner-cta');if(cta)cta.style.display=(!orderOpen&&!weekly)?'block':'none';
-  if(orderOpen&&!weekly){b.style.background='#FFF3D6';ic.textContent='schedule';ic.style.color='#9A6E12';ti.style.color='#9A6E12';ti.textContent='Ordering closes at 11:30 AM';tx.textContent='Place your order before 11:30 AM to get lunch delivered from 12:30 PM.';}
-  else if(orderOpen&&weekly){b.style.background='#e6f9ee';ic.textContent='restaurant';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent='Weekly menu is ready';tx.textContent='All meals KES 150 · Tap any day to select or swap your meal.';}
+  if(orderOpen&&!weekly){b.style.background='#FFF3D6';ic.textContent='schedule';ic.style.color='#9A6E12';ti.style.color='#9A6E12';ti.textContent='Ordering closes at 2:30 PM';tx.textContent='Place your order before 2:30 PM to get lunch delivered from 12:30 PM.';}
+  else if(orderOpen&&weekly){b.style.background='#e6f9ee';ic.textContent='restaurant';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent='Weekly menu is ready';tx.textContent='Meals from KES 100 · Tap any day to select or swap your meal.';}
   else if(!orderOpen&&!weekly){b.style.background='#e6f9ee';ic.textContent='local_shipping';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent="Today's meals have been dispatched";tx.textContent='All orders out for delivery, arriving from 12:30 PM. Ordering reopens tomorrow at 6:00 AM.';}
   else{b.style.background='#e6f9ee';ic.textContent='local_shipping';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent='Your meal is on the way';tx.textContent='Out for delivery — arrives at your desk from 12:30 PM.';}
 }
@@ -1530,7 +1611,7 @@ function renderTomorrowMealOptions(){
   document.getElementById('tomorrow-meal-options').innerHTML=dayData.meals.map(m=>`<div class="wr-meal-option${tmrSelectedMeal===m?' selected':''}" onclick="selectTomorrowMeal('${m}')">
     <span class="ms msfill wr-check" style="color:${tmrSelectedMeal===m?'var(--yellow)':'#DDD'};">${tmrSelectedMeal===m?'check_circle':'radio_button_unchecked'}</span>
     <span class="wr-meal-name">${m}</span>
-    <span class="wr-meal-price">KES 150</span>
+    <span class="wr-meal-price">KES ${mealPrice(m)}</span>
   </div>`).join('');
 }
 function selectTomorrowMeal(m){tmrSelectedMeal=m;document.getElementById('tomorrow-meal-error').style.display='none';renderTomorrowMealOptions();}
@@ -1541,8 +1622,8 @@ function sendTomorrowOrderWA(){
   if(!location){loc.classList.add('err');document.getElementById('tomorrow-location-error').style.display='block';loc.focus();return;}
   loc.classList.remove('err');document.getElementById('tomorrow-location-error').style.display='none';
   const msg=[`🍱 *${tmrLabel}'s Order — Nairobi Dishes*`,`_${tmrWeekday}, ${tmrDateStr}_`,'',
-    '*Items:*',`  1. ${tmrSelectedMeal} — KES 150`,'',
-    `*Total:* KES 150`,
+    '*Items:*',`  1. ${tmrSelectedMeal} — KES ${mealPrice(tmrSelectedMeal)}`,'',
+    `*Total:* KES ${mealPrice(tmrSelectedMeal)}`,
     `*Delivery:* ${location}, Nairobi CBD`,'',
     '_Please send M-Pesa payment after confirming._'
   ].join('\n');
@@ -1660,19 +1741,50 @@ function handleOrder(){
 }
 function closeCheckout(){document.getElementById('checkout-modal').classList.remove('open');}
 
+function firstOrderDiscountEligible(){return!!fbAuth.currentUser&&!acctProfile?.firstOrderDiscountUsed;}
+function walletCheckoutTotals(){
+  const subtotal=cartTotal();
+  const discount=firstOrderDiscountEligible()?Math.round(subtotal*0.3):0;
+  return{subtotal,discount,total:subtotal-discount};
+}
+function markFirstOrderDiscountUsed(discount){
+  if(discount<=0)return Promise.resolve();
+  const user=fbAuth.currentUser;if(!user)return Promise.resolve();
+  acctProfile={...acctProfile,firstOrderDiscountUsed:true};
+  return fbDb.collection('users').doc(user.uid).update({firstOrderDiscountUsed:true}).catch(()=>{});
+}
+let walletCheckoutMethod='wallet';
+function setWalletPaymentMethod(method){
+  walletCheckoutMethod=method;
+  const wEl=document.getElementById('wallet-pm-wallet'),mEl=document.getElementById('wallet-pm-mpesa');
+  wEl.style.borderColor=method==='wallet'?'var(--green)':'var(--border)';
+  wEl.style.background=method==='wallet'?'#F3FBF9':'#fff';
+  mEl.style.borderColor=method==='mpesa'?'var(--green)':'var(--border)';
+  mEl.style.background=method==='mpesa'?'#F3FBF9':'#fff';
+  document.getElementById('wallet-mpesa-note').style.display=method==='mpesa'?'block':'none';
+  const{total}=walletCheckoutTotals();
+  document.getElementById('wallet-insufficient-error').style.display=(method==='wallet'&&acctWallet.balance<total)?'block':'none';
+  document.getElementById('wallet-pay-btn').innerHTML=method==='wallet'
+    ?'<span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet'
+    :'<span style="font-size:18px;">📲</span>Place order via M-Pesa';
+}
 function openWalletCheckout(){
   const uniq=[...new Set(cart)];
   document.getElementById('wallet-order-items-list').innerHTML=uniq.map(id=>{
     const d=MENU.find(m=>m.id===id),q=getQty(id);
     return`<div class="order-item-row"><span style="font-size:12px;font-weight:600;flex:1;">${d.name}</span><span style="font-size:11px;color:var(--muted);margin:0 6px;">×${q}</span><span style="font-size:12px;color:var(--green);font-weight:700;">KES ${d.price*q}</span><span class="order-item-remove" onclick="removeAllOfDishWallet(${id})">✕</span></div>`;
   }).join('');
-  document.getElementById('wallet-summary-total').textContent=cartTotal();
+  const{subtotal,discount,total}=walletCheckoutTotals();
+  document.getElementById('wallet-summary-subtotal').textContent=subtotal;
+  document.getElementById('wallet-discount-row').style.display=discount>0?'flex':'none';
+  document.getElementById('wallet-summary-discount').textContent=discount;
+  document.getElementById('wallet-summary-total').textContent=total;
+  document.getElementById('wallet-discount-banner').style.display=discount>0?'block':'none';
   const loc=document.getElementById('wallet-delivery-location');
   loc.value=acctProfile?.delivery?.building?`${acctProfile.delivery.building}, ${acctProfile.delivery.street||''}`.replace(/,\s*$/,''):'';
   loc.classList.remove('err');
   document.getElementById('wallet-location-error').style.display='none';
-  document.getElementById('wallet-insufficient-error').style.display=acctWallet.balance<cartTotal()?'block':'none';
-  document.getElementById('wallet-pay-btn').disabled=acctWallet.balance<cartTotal();
+  setWalletPaymentMethod('wallet');
   document.getElementById('wallet-checkout-modal').classList.add('open');
 }
 function removeAllOfDishWallet(id){cart=cart.filter(x=>x!==id);if(cart.length===0){closeWalletCheckout();updateBars();renderDishes();return;}openWalletCheckout();updateBars();renderDishes();}
@@ -1682,15 +1794,34 @@ function handleWalletOrder(){
   const loc=document.getElementById('wallet-delivery-location'),location=loc.value.trim();
   if(!location){loc.classList.add('err');document.getElementById('wallet-location-error').style.display='block';loc.focus();return;}
   loc.classList.remove('err');document.getElementById('wallet-location-error').style.display='none';
-  const total=cartTotal();
-  if(acctWallet.balance<total){document.getElementById('wallet-insufficient-error').style.display='block';return;}
+  const{total,discount}=walletCheckoutTotals();
   const user=fbAuth.currentUser;if(!user)return;
   const uniq=[...new Set(cart)];
   const items=uniq.map(id=>{const d=MENU.find(m=>m.id===id),q=getQty(id);return{name:d.name,qty:q,price:d.price*q};});
+  const btn=document.getElementById('wallet-pay-btn');
+
+  if(walletCheckoutMethod==='mpesa'){
+    btn.disabled=true;btn.textContent='Placing order…';
+    const orderRef=fbDb.collection('orders').doc();
+    orderRef.set({uid:user.uid,items,total,payment:'mpesa-manual',deliverTo:location+', Nairobi CBD',status:'pending-payment',createdAt:firebase.firestore.FieldValue.serverTimestamp()})
+      .then(()=>markFirstOrderDiscountUsed(discount))
+      .then(()=>{
+        closeWalletCheckout();
+        const lines=items.map(it=>`  - ${it.name}${it.qty>1?` ×${it.qty}`:''} — KES ${it.price}`).join('\n');
+        const msg=['🍱 *New Order — Nairobi Dishes*','',`*Order ref:* ND-${orderRef.id.slice(0,6).toUpperCase()}`,'*Items:*',lines,'',discount>0?`*Discount:* -KES ${discount} (first order)`:'',`*Total:* KES ${total}`,`*Delivery:* ${location}, Nairobi CBD`,'','_I\'ll send M-Pesa payment now._'].filter(Boolean).join('\n');
+        cart=[];placed=true;updateBars();renderDishes();refreshMyOrderedDishes();
+        setTimeout(()=>{window.location.href=`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`;},300);
+      })
+      .catch(()=>{alert('Could not place order. Please try again.');})
+      .finally(()=>{btn.disabled=false;setWalletPaymentMethod('mpesa');});
+    return;
+  }
+
+  if(acctWallet.balance<total){document.getElementById('wallet-insufficient-error').style.display='block';return;}
   const orderRef=fbDb.collection('orders').doc();
   const walletRef=fbDb.collection('wallets').doc(user.uid);
   const txRef=walletRef.collection('transactions').doc();
-  const btn=document.getElementById('wallet-pay-btn');btn.disabled=true;btn.textContent='Placing order…';
+  btn.disabled=true;btn.textContent='Placing order…';
   fbDb.runTransaction(t=>t.get(walletRef).then(snap=>{
     const bal=snap.exists()?snap.data().balance:0;
     if(bal<total)throw new Error('insufficient');
@@ -1698,13 +1829,14 @@ function handleWalletOrder(){
     t.set(txRef,{type:'order',amount:-total,note:'Order '+orderRef.id.slice(0,6).toUpperCase(),createdAt:firebase.firestore.FieldValue.serverTimestamp()});
     t.set(orderRef,{uid:user.uid,items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
   }))
+  .then(()=>markFirstOrderDiscountUsed(discount))
   .then(()=>{
     closeWalletCheckout();
     showWalletOrderSuccess({ref:orderRef.id.slice(0,6).toUpperCase(),items,total,location});
-    cart=[];placed=true;updateBars();renderDishes();
+    cart=[];placed=true;updateBars();renderDishes();refreshMyOrderedDishes();
   })
   .catch(()=>{document.getElementById('wallet-insufficient-error').style.display='block';})
-  .finally(()=>{btn.disabled=false;btn.innerHTML='<span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet';});
+  .finally(()=>{btn.disabled=false;setWalletPaymentMethod('wallet');});
 }
 
 let lastWalletOrder=null;
@@ -1926,7 +2058,7 @@ function renderWeekly(){
         ${d.meals.map(m=>`<div class="wr-meal-option${weeklySelections[i]===m?' selected':''}" onclick="selectWeeklyMeal(${i},'${m}')">
           <span class="ms msfill wr-check" style="color:${weeklySelections[i]===m?'var(--yellow)':'#DDD'};">${weeklySelections[i]===m?'check_circle':'radio_button_unchecked'}</span>
           <span class="wr-meal-name">${m}</span>
-          <span class="wr-meal-price">KES 150</span>
+          <span class="wr-meal-price">KES ${mealPrice(m)}</span>
         </div>`).join('')}
       </div>
     </div>`;
@@ -1954,7 +2086,7 @@ function renderWeeklySavedView(){
           ${d.meals.map(m=>`<div class="wr-meal-option${weeklySelections[i]===m?' selected':''}" onclick="acctSelectChangeMeal(${i},'${m}')">
             <span class="ms msfill wr-check" style="color:${weeklySelections[i]===m?'var(--yellow)':'#DDD'};">${weeklySelections[i]===m?'check_circle':'radio_button_unchecked'}</span>
             <span class="wr-meal-name">${m}</span>
-            <span class="wr-meal-price">KES 150</span>
+            <span class="wr-meal-price">KES ${mealPrice(m)}</span>
           </div>`).join('')}
         </div>
       </div>`;
@@ -1979,8 +2111,8 @@ function acctSelectChangeMeal(i,meal){
 function acctSaveWeeklyUpdate(){
   const user=fbAuth.currentUser;if(!user)return;
   const days=Object.keys(weeklySelections).map(Number).sort((a,b)=>a-b);
-  const lines=days.map(i=>{const isPast=weeklyDayIsPast(i);return`${WEEKLY_MENU[i].day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES 150`;}).join(',\n');
-  const total=days.length*150;
+  const lines=days.map(i=>{const isPast=weeklyDayIsPast(i);return`${WEEKLY_MENU[i].day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES ${mealPrice(weeklySelections[i])}`;}).join(',\n');
+  const total=days.reduce((s,i)=>s+mealPrice(weeklySelections[i]),0);
   const buildingLoc=acctProfile?.delivery?.building?`${acctProfile.delivery.building}${acctProfile.delivery.street?', '+acctProfile.delivery.street:''}`:'your saved delivery location';
   const msg=['🍱 *Weekly Order Update — Nairobi Dishes*','',
     '*Items:*',lines,'',
@@ -2020,7 +2152,7 @@ function selectWeeklyMeal(dayIdx,meal){
 
 /* ══ WEEKLY SUMMARY + CHECKOUT (combined WhatsApp order) ══ */
 function weeklySelectedDays(){return WEEKLY_MENU.map((d,i)=>({d,i})).filter(x=>weeklySelections[x.i]).map(x=>({...x,isPast:weeklyDayIsPast(x.i)}));}
-function weeklyTotal(){return weeklySelectedDays().length*150;}
+function weeklyTotal(){return weeklySelectedDays().reduce((sum,{i})=>sum+mealPrice(weeklySelections[i]),0);}
 function syncWeeklyViews(){renderWeekly();renderDesktopWeekly();renderDsWeekDayTabs();}
 function updateWeeklySummary(){
   const el=document.getElementById('weekly-summary');if(!el)return;
@@ -2032,7 +2164,7 @@ function updateWeeklySummary(){
 function openWeeklyCheckout(){
   const days=weeklySelectedDays();if(days.length===0)return;
   document.getElementById('weekly-order-items-list').innerHTML=days.map(({d,i,isPast})=>
-    `<div class="order-item-row"><span style="font-size:12px;font-weight:600;flex:1;">${d.day}${isPast?' <span style="color:var(--muted);font-weight:600;font-size:9.5px;">(NEXT WK)</span>':''} — ${weeklySelections[i]}</span><span style="font-size:12px;color:var(--green);font-weight:700;margin:0 6px;">KES 150</span><span class="order-item-remove" onclick="removeWeeklyDay(${i})">✕</span></div>`
+    `<div class="order-item-row"><span style="font-size:12px;font-weight:600;flex:1;">${d.day}${isPast?' <span style="color:var(--muted);font-weight:600;font-size:9.5px;">(NEXT WK)</span>':''} — ${weeklySelections[i]}</span><span style="font-size:12px;color:var(--green);font-weight:700;margin:0 6px;">KES ${mealPrice(weeklySelections[i])}</span><span class="order-item-remove" onclick="removeWeeklyDay(${i})">✕</span></div>`
   ).join('');
   document.getElementById('weekly-summary-total-modal').textContent=weeklyTotal();
   document.getElementById('weekly-delivery-location').value='';
@@ -2051,7 +2183,7 @@ function handleWeeklyOrder(){
   if(!location){loc.classList.add('err');document.getElementById('weekly-location-error').style.display='block';loc.focus();return;}
   loc.classList.remove('err');document.getElementById('weekly-location-error').style.display='none';
   const days=weeklySelectedDays();if(days.length===0)return;
-  const lines=days.map(({d,i,isPast})=>`${d.day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES 150`).join(',\n');
+  const lines=days.map(({d,i,isPast})=>`${d.day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES ${mealPrice(weeklySelections[i])}`).join(',\n');
   const msg=['🍱 *Weekly Order — Nairobi Dishes*','',
     '*Items:*',lines,'',
     `*Total:* KES ${weeklyTotal()}`,
@@ -2093,7 +2225,7 @@ function renderDsWeekMealOptions(){
   box.innerHTML=d.meals.map(m=>`<div class="wr-meal-option${weeklySelections[dsWeekActiveDay]===m?' selected':''}" onclick="dsSelectWeekMeal(${dsWeekActiveDay},'${m}')">
     <span class="ms msfill wr-check" style="color:${weeklySelections[dsWeekActiveDay]===m?'var(--yellow)':'#DDD'};">${weeklySelections[dsWeekActiveDay]===m?'check_circle':'radio_button_unchecked'}</span>
     <span class="wr-meal-name">${m}</span>
-    <span class="wr-meal-price">KES 150</span>
+    <span class="wr-meal-price">KES ${mealPrice(m)}</span>
   </div>`).join('');
 }
 function dsSelectWeekMeal(i,m){
@@ -2121,7 +2253,7 @@ function dsSendWeeklyOrder(){
   if(!location){loc.classList.add('err');document.getElementById('ds-weekly-loc-err').style.display='block';loc.focus();return;}
   loc.classList.remove('err');document.getElementById('ds-weekly-loc-err').style.display='none';
   const days=weeklySelectedDays();if(days.length===0)return;
-  const lines=days.map(({d,i,isPast})=>`${d.day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES 150`).join(',\n');
+  const lines=days.map(({d,i,isPast})=>`${d.day}${isPast?' (next wk)':''} - ${weeklySelections[i]} — KES ${mealPrice(weeklySelections[i])}`).join(',\n');
   const msg=['🍱 *Weekly Order — Nairobi Dishes*','',
     '*Items:*',lines,'',
     `*Total:* KES ${weeklyTotal()}`,
@@ -2161,7 +2293,7 @@ function renderDsTomorrowMealOptions(){
   box.innerHTML=d.meals.map(m=>`<div class="wr-meal-option${dsTmrSelectedMeal===m?' selected':''}" onclick="dsSelectTomorrowMeal('${m}')">
     <span class="ms msfill wr-check" style="color:${dsTmrSelectedMeal===m?'var(--yellow)':'#DDD'};">${dsTmrSelectedMeal===m?'check_circle':'radio_button_unchecked'}</span>
     <span class="wr-meal-name">${m}</span>
-    <span class="wr-meal-price">KES 150</span>
+    <span class="wr-meal-price">KES ${mealPrice(m)}</span>
   </div>`).join('');
 }
 function dsSelectTomorrowMeal(m){dsTmrSelectedMeal=m;const err=document.getElementById('ds-tomorrow-meal-error');if(err)err.style.display='none';renderDsTomorrowMealOptions();}
@@ -2171,8 +2303,8 @@ function dsSendTomorrowOrder(){
   if(!location){loc.classList.add('err');document.getElementById('ds-tomorrow-loc-err').style.display='block';loc.focus();return;}
   loc.classList.remove('err');document.getElementById('ds-tomorrow-loc-err').style.display='none';
   const msg=[`🍱 *${dsTmrLabel}'s Order — Nairobi Dishes*`,`_${dsTmrWeekday}, ${dsTmrDateStr}_`,'',
-    '*Items:*',`  1. ${dsTmrSelectedMeal} — KES 150`,'',
-    `*Total:* KES 150`,
+    '*Items:*',`  1. ${dsTmrSelectedMeal} — KES ${mealPrice(dsTmrSelectedMeal)}`,'',
+    `*Total:* KES ${mealPrice(dsTmrSelectedMeal)}`,
     `*Delivery:* ${location}, Nairobi CBD`,'',
     '_Please send M-Pesa payment after confirming._'
   ].join('\n');
@@ -2185,16 +2317,139 @@ function renderRanking(){
   const c=document.getElementById('rank-list');if(!c)return;
   c.innerHTML=RANKING.map((r,i)=>`<div class="rank-row">
     <div class="rank-num${i<2?' top':''}">${i+2}</div>
-    <div class="rank-info"><div class="rank-name">${r.name}</div><div class="rank-track"><div class="rank-fill${i<2?' top':''}" style="width:${Math.round(r.pct/28*100)}%"></div></div></div>
+    <div class="rank-info"><div class="rank-name">${r.name}</div><div class="rank-track"><div class="rank-fill${i<2?' top':''}" style="width:${Math.round(r.pct/28*100)}%"></div></div>
+      <div style="margin-top:4px;">${reviewBadgeHtml(r.name)} <span onclick="openReviewModal('${r.name}')" style="font-size:10px;color:var(--green);font-weight:700;cursor:pointer;margin-left:6px;">Rate this dish</span></div>
+    </div>
     <div class="rank-pct">${r.pct}%</div>
   </div>`).join('');
   /* desktop */
   const dc=document.getElementById('ds-pop-list');if(!dc)return;
   dc.innerHTML=RANKING.map((r,i)=>`<div class="ds-pop-row">
     <div style="width:20px;text-align:center;font:700 12px Poppins,sans-serif;color:${i<2?'var(--dark)':'#B0B0B0'}">${i+2}</div>
-    <div style="flex:1;padding:0 10px;"><div style="font:600 13px Poppins,sans-serif;">${r.name}</div><div style="height:6px;background:#F0F0F0;border-radius:3px;margin-top:5px;overflow:hidden;"><div style="width:${Math.round(r.pct/28*100)}%;height:100%;background:${i<2?'var(--green)':'#9FD8CC'};border-radius:3px;"></div></div></div>
+    <div style="flex:1;padding:0 10px;"><div style="font:600 13px Poppins,sans-serif;">${r.name}</div><div style="height:6px;background:#F0F0F0;border-radius:3px;margin-top:5px;overflow:hidden;"><div style="width:${Math.round(r.pct/28*100)}%;height:100%;background:${i<2?'var(--green)':'#9FD8CC'};border-radius:3px;"></div></div>
+      <div style="margin-top:6px;">${reviewBadgeHtml(r.name)} <span onclick="openReviewModal('${r.name}')" style="font-size:10.5px;color:var(--green);font-weight:700;cursor:pointer;margin-left:6px;">Rate this dish</span></div>
+    </div>
     <div style="font:700 12px Poppins,sans-serif;">${r.pct}%</div>
   </div>`).join('');
+}
+
+/* ══ REVIEWS ══ */
+let reviewsCache={};
+let myOrderedDishNames=new Set();
+function refreshMyOrderedDishes(){
+  const user=fbAuth.currentUser;
+  if(!user){myOrderedDishNames=new Set();return;}
+  fbDb.collection('orders').where('uid','==',user.uid).get().then(snap=>{
+    const names=new Set();
+    snap.docs.forEach(d=>{(d.data().items||[]).forEach(it=>names.add(it.name));});
+    myOrderedDishNames=names;
+  }).catch(()=>{});
+}
+function loadAllReviews(){
+  fbDb.collection('reviews').where('hidden','==',false).get().then(snap=>{
+    const byDish={};
+    snap.docs.forEach(docSnap=>{
+      const r={id:docSnap.id,...docSnap.data()};
+      if(!byDish[r.dishName])byDish[r.dishName]={list:[],foodSum:0,serviceSum:0};
+      byDish[r.dishName].list.push(r);
+      byDish[r.dishName].foodSum+=r.foodStars||0;
+      byDish[r.dishName].serviceSum+=r.serviceStars||0;
+    });
+    reviewsCache={};
+    Object.keys(byDish).forEach(name=>{
+      const b=byDish[name],n=b.list.length;
+      reviewsCache[name]={count:n,avgFood:n?b.foodSum/n:0,avgService:n?b.serviceSum/n:0,
+        list:b.list.sort((a,c)=>(c.createdAt?.seconds||0)-(a.createdAt?.seconds||0))};
+    });
+    renderRanking();
+    renderHeroReviewBadges();
+    if(reviewModalDish)renderReviewModalContent();
+  }).catch(()=>{});
+}
+function renderHeroReviewBadges(){
+  const html=`${reviewBadgeHtml('Beef Pilau')} <span onclick="openReviewModal('Beef Pilau')" style="font-size:10px;color:var(--green);font-weight:700;cursor:pointer;margin-left:6px;">Rate this dish</span>`;
+  const m=document.getElementById('hero-review-badge');if(m)m.innerHTML=html;
+  const d=document.getElementById('ds-hero-review-badge');if(d)d.innerHTML=html.replace('font-size:10px','font-size:10.5px');
+}
+function reviewBadgeHtml(dishName){
+  const r=reviewsCache[dishName];
+  if(!r||r.count===0)return`<span style="font-size:10px;color:var(--muted);">No reviews yet</span>`;
+  const avg=((r.avgFood+r.avgService)/2).toFixed(1);
+  return`<span style="font-size:10px;color:#E8A317;font-weight:700;">★ ${avg}</span><span style="font-size:10px;color:var(--muted);"> (${r.count} review${r.count!==1?'s':''})</span>`;
+}
+function slugify(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');}
+
+let reviewModalDish=null;
+let reviewDraftFood=0,reviewDraftService=0;
+function openReviewModal(dishName){
+  reviewModalDish=dishName;
+  const user=fbAuth.currentUser;
+  const existing=user?reviewsCache[dishName]?.list.find(r=>r.uid===user.uid):null;
+  reviewDraftFood=existing?existing.foodStars:0;
+  reviewDraftService=existing?existing.serviceStars:0;
+  document.getElementById('review-modal-dish-name').textContent=dishName;
+  document.getElementById('review-comment').value=existing?existing.comment||'':'';
+  renderReviewModalContent();
+  document.getElementById('review-modal').classList.add('open');
+}
+function closeReviewModal(){document.getElementById('review-modal').classList.remove('open');reviewModalDish=null;}
+function renderReviewModalContent(){
+  if(!reviewModalDish)return;
+  const user=fbAuth.currentUser;
+  const formBox=document.getElementById('review-form-box');
+  const gateBox=document.getElementById('review-gate-box');
+  const canReview=user&&myOrderedDishNames.has(reviewModalDish);
+  formBox.style.display=canReview?'block':'none';
+  gateBox.style.display=canReview?'none':'block';
+  gateBox.textContent=user?"You'll be able to review this dish once you've ordered it.":'Sign in and order this dish to leave a review.';
+  renderStarPicker('review-food-stars',reviewDraftFood,'reviewDraftFood');
+  renderStarPicker('review-service-stars',reviewDraftService,'reviewDraftService');
+  const listBox=document.getElementById('review-list-box');
+  const dishReviews=(reviewsCache[reviewModalDish]?.list)||[];
+  listBox.innerHTML=dishReviews.length===0
+    ?'<div style="text-align:center;padding:16px 0;color:var(--muted);font-size:12px;">No reviews yet — be the first!</div>'
+    :dishReviews.map(r=>{
+      const date=r.createdAt?.toDate?r.createdAt.toDate().toLocaleDateString('en-KE',{day:'numeric',month:'short'}):'';
+      return`<div style="padding:10px 0;border-bottom:1px solid var(--border2);">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font:700 12px Poppins,sans-serif;">${'★'.repeat(Math.round((r.foodStars+r.serviceStars)/2))}${'☆'.repeat(5-Math.round((r.foodStars+r.serviceStars)/2))} <span style="color:#E8A317;"></span></span>
+          <span style="font-size:10px;color:var(--muted);">${date}</span>
+        </div>
+        ${r.comment?`<div style="font-size:12px;color:var(--dark);margin-top:4px;">${escapeHtmlReview(r.comment)}</div>`:''}
+        <div style="margin-top:4px;"><span onclick="reportReview('${r.id}')" style="font-size:10px;color:var(--muted);cursor:pointer;text-decoration:underline;">Report</span></div>
+      </div>`;
+    }).join('');
+}
+function escapeHtmlReview(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function renderStarPicker(elId,value,varName){
+  const el=document.getElementById(elId);if(!el)return;
+  el.innerHTML=[1,2,3,4,5].map(n=>`<span class="ms msfill" onclick="${varName}=${n};renderReviewModalContent();" style="font-size:26px;cursor:pointer;color:${n<=value?'#E8A317':'#DDD'};">star</span>`).join('');
+}
+function submitReview(){
+  const user=fbAuth.currentUser;if(!user||!reviewModalDish)return;
+  if(reviewDraftFood===0||reviewDraftService===0){alert('Please rate both food and service.');return;}
+  const comment=document.getElementById('review-comment').value.trim().slice(0,150);
+  const docId=user.uid+'_'+slugify(reviewModalDish);
+  fbDb.collection('reviews').doc(docId).set({
+    uid:user.uid,dishName:reviewModalDish,
+    reviewerName:acctProfile?.fullName?acctProfile.fullName.split(' ')[0]:'Customer',
+    foodStars:reviewDraftFood,serviceStars:reviewDraftService,comment,
+    reportCount:0,hidden:false,
+    createdAt:firebase.firestore.FieldValue.serverTimestamp(),
+    updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+  },{merge:true}).then(()=>{
+    closeReviewModal();
+    loadAllReviews();
+  }).catch(()=>{alert('Could not save your review. Please try again.');});
+}
+function reportReview(reviewId){
+  if(!fbAuth.currentUser)return;
+  const ref=fbDb.collection('reviews').doc(reviewId);
+  fbDb.runTransaction(t=>t.get(ref).then(snap=>{
+    if(!snap.exists())return;
+    const count=(snap.data().reportCount||0)+1;
+    t.update(ref,{reportCount:count,hidden:count>=3});
+  })).then(()=>{loadAllReviews();alert('Thanks — we\'ll take a look.');}).catch(()=>{});
 }
 
 /* ══ DESKTOP MENU GRID ══ */
@@ -2221,6 +2476,27 @@ function dsChangeQty(id,delta){
   if(delta>0)dsCart.push(id);else{const i=dsCart.lastIndexOf(id);if(i>=0)dsCart.splice(i,1);}
   renderDesktopMenu();renderDesktopOrderPanel();
 }
+function dsCartTotals(){
+  const subtotal=dsCart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);
+  const discount=firstOrderDiscountEligible()?Math.round(subtotal*0.3):0;
+  return{subtotal,discount,total:subtotal-discount};
+}
+let dsPaymentMethod='wallet';
+function setDsPaymentMethod(method){
+  dsPaymentMethod=method;
+  const wEl=document.getElementById('ds-pm-wallet'),mEl=document.getElementById('ds-pm-mpesa');
+  if(!wEl||!mEl)return;
+  wEl.style.borderColor=method==='wallet'?'var(--green)':'var(--border)';
+  wEl.style.background=method==='wallet'?'#F3FBF9':'#fff';
+  mEl.style.borderColor=method==='mpesa'?'var(--green)':'var(--border)';
+  mEl.style.background=method==='mpesa'?'#F3FBF9':'#fff';
+  document.getElementById('ds-mpesa-note').style.display=method==='mpesa'?'block':'none';
+  const{total}=dsCartTotals();
+  document.getElementById('ds-wallet-insufficient-err').style.display=(method==='wallet'&&acctWallet.balance<total)?'block':'none';
+  document.getElementById('ds-order-btn').innerHTML=method==='wallet'
+    ?'<span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet'
+    :'<span style="font-size:18px;">📲</span>Place order via M-Pesa';
+}
 function renderDesktopOrderPanel(){
   const empty=document.getElementById('ds-order-empty');
   const items=document.getElementById('ds-order-items');
@@ -2231,23 +2507,27 @@ function renderDesktopOrderPanel(){
     const d=MENU.find(m=>m.id===id),q=dsCart.filter(x=>x===id).length;
     return`<div class="order-item-row"><span style="font-size:12px;font-weight:600;flex:1;">${d.name}</span><span style="font-size:11px;color:var(--muted);margin:0 4px;">×${q}</span><span style="font-size:12px;color:var(--green);font-weight:700;">KES ${d.price*q}</span><span class="order-item-remove" onclick="dsRemoveDish(${id})">✕</span></div>`;
   }).join('');
-  const total=dsCart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);
+  const{subtotal,discount,total}=dsCartTotals();
+  document.getElementById('ds-order-subtotal').textContent=subtotal;
+  document.getElementById('ds-discount-row').style.display=discount>0?'flex':'none';
+  document.getElementById('ds-order-discount').textContent=discount;
   document.getElementById('ds-order-total').textContent=total;
-  const btn=document.getElementById('ds-order-btn');
-  const insufficientErr=document.getElementById('ds-wallet-insufficient-err');
+  document.getElementById('ds-discount-banner').style.display=discount>0?'block':'none';
+  const pmBlock=document.getElementById('ds-payment-method-block');
   if(fbAuth.currentUser){
-    btn.innerHTML='<span class="ms msfill" style="font-size:18px;">payments</span>Pay from wallet';
-    insufficientErr.style.display=acctWallet.balance<total?'block':'none';
+    pmBlock.style.display='block';
+    setDsPaymentMethod(dsPaymentMethod);
     if(!document.getElementById('ds-delivery-loc').value&&acctProfile?.delivery?.building){
       document.getElementById('ds-delivery-loc').value=`${acctProfile.delivery.building}${acctProfile.delivery.street?', '+acctProfile.delivery.street:''}`;
     }
   }else{
-    btn.innerHTML='<span style="font-size:18px;">📲</span>Order via WhatsApp';
-    insufficientErr.style.display='none';
+    pmBlock.style.display='none';
+    document.getElementById('ds-order-btn').innerHTML='<span style="font-size:18px;">📲</span>Order via WhatsApp';
+    document.getElementById('ds-wallet-insufficient-err').style.display='none';
   }
 }
 function dsRemoveDish(id){dsCart=dsCart.filter(x=>x!==id);renderDesktopMenu();renderDesktopOrderPanel();}
-function dsClearCart(){dsCart=[];renderDesktopMenu();renderDesktopOrderPanel();}
+function dsClearCart(){dsCart=[];dsPaymentMethod='wallet';renderDesktopMenu();renderDesktopOrderPanel();}
 function dsHandleOrderSmart(){
   if(fbAuth.currentUser)dsHandleWalletOrder();
   else dsHandleOrder();
@@ -2269,13 +2549,31 @@ function dsHandleWalletOrder(){
   loc.classList.remove('err');document.getElementById('ds-loc-err').style.display='none';
   const user=fbAuth.currentUser;if(!user)return;
   const uniq=[...new Set(dsCart)];
-  const total=dsCart.reduce((s,id)=>{const d=MENU.find(m=>m.id===id);return s+(d?d.price:0);},0);
-  if(acctWallet.balance<total){document.getElementById('ds-wallet-insufficient-err').style.display='block';return;}
+  const{total,discount}=dsCartTotals();
   const items=uniq.map(id=>{const d=MENU.find(m=>m.id===id),q=dsCart.filter(x=>x===id).length;return{name:d.name,qty:q,price:d.price*q};});
+  const btn=document.getElementById('ds-order-btn');
+
+  if(dsPaymentMethod==='mpesa'){
+    btn.disabled=true;btn.textContent='Placing order…';
+    const orderRef=fbDb.collection('orders').doc();
+    orderRef.set({uid:user.uid,items,total,payment:'mpesa-manual',deliverTo:location+', Nairobi CBD',status:'pending-payment',createdAt:firebase.firestore.FieldValue.serverTimestamp()})
+      .then(()=>markFirstOrderDiscountUsed(discount))
+      .then(()=>{
+        dsClearCart();refreshMyOrderedDishes();
+        const lines=items.map(it=>`  - ${it.name}${it.qty>1?` ×${it.qty}`:''} — KES ${it.price}`).join('\n');
+        const msg=['🍱 *New Order — Nairobi Dishes*','',`*Order ref:* ND-${orderRef.id.slice(0,6).toUpperCase()}`,'*Items:*',lines,'',discount>0?`*Discount:* -KES ${discount} (first order)`:'',`*Total:* KES ${total}`,`*Delivery:* ${location}, Nairobi CBD`,'','_I\'ll send M-Pesa payment now._'].filter(Boolean).join('\n');
+        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
+      })
+      .catch(()=>{alert('Could not place order. Please try again.');})
+      .finally(()=>{btn.disabled=false;renderDesktopOrderPanel();});
+    return;
+  }
+
+  if(acctWallet.balance<total){document.getElementById('ds-wallet-insufficient-err').style.display='block';return;}
   const orderRef=fbDb.collection('orders').doc();
   const walletRef=fbDb.collection('wallets').doc(user.uid);
   const txRef=walletRef.collection('transactions').doc();
-  const btn=document.getElementById('ds-order-btn');btn.disabled=true;btn.textContent='Placing order…';
+  btn.disabled=true;btn.textContent='Placing order…';
   fbDb.runTransaction(t=>t.get(walletRef).then(snap=>{
     const bal=snap.exists()?snap.data().balance:0;
     if(bal<total)throw new Error('insufficient');
@@ -2283,8 +2581,10 @@ function dsHandleWalletOrder(){
     t.set(txRef,{type:'order',amount:-total,note:'Order '+orderRef.id.slice(0,6).toUpperCase(),createdAt:firebase.firestore.FieldValue.serverTimestamp()});
     t.set(orderRef,{uid:user.uid,items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
   }))
+  .then(()=>markFirstOrderDiscountUsed(discount))
   .then(()=>{
     dsClearCart();
+    refreshMyOrderedDishes();
     alert(`Order confirmed! Paid KES ${total} from wallet.\nOrder ND-${orderRef.id.slice(0,6).toUpperCase()}\nArriving from 12:30 PM.`);
   })
   .catch(()=>{document.getElementById('ds-wallet-insufficient-err').style.display='block';})
@@ -2325,7 +2625,7 @@ function renderDesktopWeekly(){
 function updateDsBanner(){
   const bt=document.getElementById('ds-banner-title'),bx=document.getElementById('ds-banner-text'),db=document.getElementById('ds-banner');if(!bt)return;
   const cta=document.getElementById('ds-banner-cta');if(cta)cta.style.display=!orderOpen?'block':'none';
-  if(orderOpen){db.style.background='#FFF3D6';bt.style.color='#9A6E12';bt.textContent='Ordering closes at 11:30 AM';bx.textContent='Place your order before 11:30 AM to get lunch delivered from 12:30 PM.';}
+  if(orderOpen){db.style.background='#FFF3D6';bt.style.color='#9A6E12';bt.textContent='Ordering closes at 2:30 PM';bx.textContent='Place your order before 2:30 PM to get lunch delivered from 12:30 PM.';}
   else{db.style.background='#e6f9ee';bt.style.color='#008f48';bt.textContent="Today's orders have been dispatched";bx.textContent='Ordering reopens tomorrow at 6:00 AM.';}
   const dsub=document.getElementById('ds-date-sub');if(dsub)dsub.textContent=todayDate()+' · Nairobi CBD';
 }
@@ -2371,7 +2671,7 @@ function applyTimeGate(){
   }
   const{day}=getEAT();const isWeekend=day===0||day===6;
   const sub=document.getElementById('closed-sub-text');
-  if(sub)sub.innerHTML=isWeekend?'We only operate Mon–Fri.<br>Come back Monday before 11:30 AM!':'We stopped taking orders at 11:30 AM.<br>Come back tomorrow before 11:30 AM.';
+  if(sub)sub.innerHTML=isWeekend?'We only operate Mon–Fri.<br>Come back Monday before 2:30 PM!':'We stopped taking orders at 2:30 PM.<br>Come back tomorrow before 2:30 PM.';
   updateBanner();updateDsBanner();renderDishes();renderDesktopMenu();syncWeeklyViews();updateBars();checkOrderReminder();checkSessionTimeout();
 }
 function scheduleTimeGate(){applyTimeGate();const n=new Date();const ms=(60-n.getSeconds())*1000-n.getMilliseconds();setTimeout(()=>{applyTimeGate();setInterval(applyTimeGate,60000);},ms);}
@@ -2482,11 +2782,11 @@ function checkOrderReminder(){
   if((h>9||(h===9&&m>=30))&&!reminderShownToday()){
     localStorage.setItem('nd_reminder_last_shown',todayKeyEAT());
     if(navigator.serviceWorker&&navigator.serviceWorker.controller){
-      navigator.serviceWorker.ready.then(reg=>reg.showNotification('Time to order lunch 🍱',{body:'Ordering closes at 11:30 AM — place your order now.',icon:'icon-192.png'})).catch(()=>{
-        new Notification('Time to order lunch 🍱',{body:'Ordering closes at 11:30 AM — place your order now.'});
+      navigator.serviceWorker.ready.then(reg=>reg.showNotification('Time to order lunch 🍱',{body:'Ordering closes at 2:30 PM — place your order now.',icon:'icon-192.png'})).catch(()=>{
+        new Notification('Time to order lunch 🍱',{body:'Ordering closes at 2:30 PM — place your order now.'});
       });
     }else{
-      new Notification('Time to order lunch 🍱',{body:'Ordering closes at 11:30 AM — place your order now.'});
+      new Notification('Time to order lunch 🍱',{body:'Ordering closes at 2:30 PM — place your order now.'});
     }
   }
 }
@@ -2497,6 +2797,7 @@ document.getElementById('greeting-sub').textContent=todayDate()+' · Nairobi CBD
 document.querySelectorAll('.live-time').forEach(el=>el.textContent=liveTime());
 setInterval(()=>{document.querySelectorAll('.live-time').forEach(el=>el.textContent=liveTime());},30000);
 renderRanking();
+loadAllReviews();
 scheduleTimeGate();
 renderWeekly();
 renderDesktopWeekly();
