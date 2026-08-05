@@ -1575,7 +1575,7 @@ function updateBanner(){
   const b=document.getElementById('banner'),ic=document.getElementById('banner-icon'),ti=document.getElementById('banner-title'),tx=document.getElementById('banner-text');
   const weekly=currentView==='weekly';
   const cta=document.getElementById('banner-cta');if(cta)cta.style.display=(!orderOpen&&!weekly)?'block':'none';
-  if(orderOpen&&!weekly){b.style.background='#FFF3D6';ic.textContent='schedule';ic.style.color='#9A6E12';ti.style.color='#9A6E12';ti.textContent='Ordering closes at 11:30 AM';tx.textContent='Place your order before 11:30 AM to get lunch delivered from 12:30 AM.';}
+  if(orderOpen&&!weekly){b.style.background='#FFF3D6';ic.textContent='schedule';ic.style.color='#9A6E12';ti.style.color='#9A6E12';ti.textContent='Ordering closes at 11:30 AM';tx.textContent='Place your order before 11:30 AM to get lunch delivered from 12:30 PM.';}
   else if(orderOpen&&weekly){b.style.background='#e6f9ee';ic.textContent='restaurant';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent='Weekly menu is ready';tx.textContent='Meals from KES 100 · Tap any day to select or swap your meal.';}
   else if(!orderOpen&&!weekly){b.style.background='#e6f9ee';ic.textContent='local_shipping';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent="Today's meals have been dispatched";tx.textContent='All orders out for delivery, arriving from 12:30 PM. Ordering reopens tomorrow at 6:00 AM.';}
   else{b.style.background='#e6f9ee';ic.textContent='local_shipping';ic.style.color='#008f48';ti.style.color='#008f48';ti.textContent='Your meal is on the way';tx.textContent='Out for delivery — arrives at your desk from 12:30 PM.';}
@@ -1803,7 +1803,7 @@ function handleWalletOrder(){
   if(walletCheckoutMethod==='mpesa'){
     btn.disabled=true;btn.textContent='Placing order…';
     const orderRef=fbDb.collection('orders').doc();
-    orderRef.set({uid:user.uid,items,total,payment:'mpesa-manual',deliverTo:location+', Nairobi CBD',status:'pending-payment',createdAt:firebase.firestore.FieldValue.serverTimestamp()})
+    orderRef.set({uid:user.uid,customerName:acctProfile?.fullName||'',customerPhone:acctProfile?.phone||'',items,total,payment:'mpesa-manual',deliverTo:location+', Nairobi CBD',status:'pending-payment',createdAt:firebase.firestore.FieldValue.serverTimestamp()})
       .then(()=>markFirstOrderDiscountUsed(discount))
       .then(()=>{
         closeWalletCheckout();
@@ -1827,7 +1827,7 @@ function handleWalletOrder(){
     if(bal<total)throw new Error('insufficient');
     t.update(walletRef,{balance:bal-total});
     t.set(txRef,{type:'order',amount:-total,note:'Order '+orderRef.id.slice(0,6).toUpperCase(),createdAt:firebase.firestore.FieldValue.serverTimestamp()});
-    t.set(orderRef,{uid:user.uid,items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+    t.set(orderRef,{uid:user.uid,customerName:acctProfile?.fullName||'',customerPhone:acctProfile?.phone||'',items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
   }))
   .then(()=>markFirstOrderDiscountUsed(discount))
   .then(()=>{
@@ -2556,7 +2556,7 @@ function dsHandleWalletOrder(){
   if(dsPaymentMethod==='mpesa'){
     btn.disabled=true;btn.textContent='Placing order…';
     const orderRef=fbDb.collection('orders').doc();
-    orderRef.set({uid:user.uid,items,total,payment:'mpesa-manual',deliverTo:location+', Nairobi CBD',status:'pending-payment',createdAt:firebase.firestore.FieldValue.serverTimestamp()})
+    orderRef.set({uid:user.uid,customerName:acctProfile?.fullName||'',customerPhone:acctProfile?.phone||'',items,total,payment:'mpesa-manual',deliverTo:location+', Nairobi CBD',status:'pending-payment',createdAt:firebase.firestore.FieldValue.serverTimestamp()})
       .then(()=>markFirstOrderDiscountUsed(discount))
       .then(()=>{
         dsClearCart();refreshMyOrderedDishes();
@@ -2579,7 +2579,7 @@ function dsHandleWalletOrder(){
     if(bal<total)throw new Error('insufficient');
     t.update(walletRef,{balance:bal-total});
     t.set(txRef,{type:'order',amount:-total,note:'Order '+orderRef.id.slice(0,6).toUpperCase(),createdAt:firebase.firestore.FieldValue.serverTimestamp()});
-    t.set(orderRef,{uid:user.uid,items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+    t.set(orderRef,{uid:user.uid,customerName:acctProfile?.fullName||'',customerPhone:acctProfile?.phone||'',items,total,payment:'wallet',deliverTo:location+', Nairobi CBD',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()});
   }))
   .then(()=>markFirstOrderDiscountUsed(discount))
   .then(()=>{
